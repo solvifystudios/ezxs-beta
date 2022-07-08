@@ -8,7 +8,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class EventDetailsWidget extends StatefulWidget {
-  const EventDetailsWidget({Key key}) : super(key: key);
+  const EventDetailsWidget({Key? key}) : super(key: key);
 
   @override
   _EventDetailsWidgetState createState() => _EventDetailsWidgetState();
@@ -232,19 +232,19 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget>
                     Text(
                       'Event Name',
                       style: FlutterFlowTheme.of(context).title1,
-                    ).animated([animationsMap['textOnPageLoadAnimation1']]),
+                    ).animated([animationsMap['textOnPageLoadAnimation1']!]),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                       child: Text(
                         'Event Description',
                         style: FlutterFlowTheme.of(context).subtitle2,
-                      ).animated([animationsMap['textOnPageLoadAnimation2']]),
+                      ).animated([animationsMap['textOnPageLoadAnimation2']!]),
                     ),
                     Divider(
                       height: 24,
                       thickness: 1,
                       color: FlutterFlowTheme.of(context).lineColor,
-                    ).animated([animationsMap['dividerOnPageLoadAnimation']]),
+                    ).animated([animationsMap['dividerOnPageLoadAnimation']!]),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -272,20 +272,20 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget>
                           ),
                         ),
                       ],
-                    ).animated([animationsMap['rowOnPageLoadAnimation']]),
+                    ).animated([animationsMap['rowOnPageLoadAnimation']!]),
                     Text(
                       'Tuesday, 10:00am',
                       style: FlutterFlowTheme.of(context).title1.override(
                             fontFamily: 'Source Sans Pro',
                             color: FlutterFlowTheme.of(context).primaryColor,
                           ),
-                    ).animated([animationsMap['textOnPageLoadAnimation3']]),
+                    ).animated([animationsMap['textOnPageLoadAnimation3']!]),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                       child: Text(
                         'Passes',
                         style: FlutterFlowTheme.of(context).subtitle1,
-                      ).animated([animationsMap['textOnPageLoadAnimation4']]),
+                      ).animated([animationsMap['textOnPageLoadAnimation4']!]),
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
@@ -351,7 +351,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget>
                           ),
                         ),
                       ).animated(
-                          [animationsMap['containerOnPageLoadAnimation1']]),
+                          [animationsMap['containerOnPageLoadAnimation1']!]),
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
@@ -417,7 +417,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget>
                           ),
                         ),
                       ).animated(
-                          [animationsMap['containerOnPageLoadAnimation2']]),
+                          [animationsMap['containerOnPageLoadAnimation2']!]),
                     ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
@@ -483,7 +483,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget>
                           ),
                         ),
                       ).animated(
-                          [animationsMap['containerOnPageLoadAnimation3']]),
+                          [animationsMap['containerOnPageLoadAnimation3']!]),
                     ),
                   ],
                 ),
@@ -527,7 +527,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget>
                     ),
                     borderRadius: BorderRadius.circular(30),
                   ),
-                ).animated([animationsMap['buttonOnPageLoadAnimation']]),
+                ).animated([animationsMap['buttonOnPageLoadAnimation']!]),
               ),
             ],
           ),

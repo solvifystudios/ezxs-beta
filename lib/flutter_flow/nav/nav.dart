@@ -18,10 +18,10 @@ export 'serialization_util.dart';
 const kTransitionInfoKey = '__transition_info__';
 
 class AppStateNotifier extends ChangeNotifier {
-  EZXSBetaFirebaseUser initialUser;
-  EZXSBetaFirebaseUser user;
+  EZXSBetaFirebaseUser? initialUser;
+  EZXSBetaFirebaseUser? user;
   bool showSplashImage = true;
-  String _redirectLocation;
+  String? _redirectLocation;
 
   /// Determines whether the app will refresh and build again when a sign
   /// in or sign out happens. This is useful when the app is launched or
@@ -35,7 +35,7 @@ class AppStateNotifier extends ChangeNotifier {
   bool get initiallyLoggedIn => initialUser?.loggedIn ?? false;
   bool get shouldRedirect => loggedIn && _redirectLocation != null;
 
-  String getRedirectLocation() => _redirectLocation;
+  String getRedirectLocation() => _redirectLocation!;
   bool hasRedirect() => _redirectLocation != null;
   void setRedirectLocationIfUnset(String loc) => _redirectLocation ??= loc;
   void clearRedirectLocation() => _redirectLocation = null;
@@ -168,9 +168,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       ],
     );
 
-extension NavParamExtensions on Map<String, String> {
-  Map<String, String> get withoutNulls =>
-      Map.fromEntries(entries.where((e) => e.value != null));
+extension NavParamExtensions on Map<String, String?> {
+  Map<String, String> get withoutNulls => Map.fromEntries(
+        entries
+            .where((e) => e.value != null)
+            .map((e) => MapEntry(e.key, e.value!)),
+      );
 }
 
 extension NavigationExtensions on BuildContext {
@@ -179,7 +182,7 @@ extension NavigationExtensions on BuildContext {
     bool mounted, {
     Map<String, String> params = const <String, String>{},
     Map<String, String> queryParams = const <String, String>{},
-    Object extra,
+    Object? extra,
     bool ignoreRedirect = false,
   }) =>
       !mounted || GoRouter.of(this).shouldRedirect(ignoreRedirect)
@@ -196,7 +199,7 @@ extension NavigationExtensions on BuildContext {
     bool mounted, {
     Map<String, String> params = const <String, String>{},
     Map<String, String> queryParams = const <String, String>{},
-    Object extra,
+    Object? extra,
     bool ignoreRedirect = false,
   }) =>
       !mounted || GoRouter.of(this).shouldRedirect(ignoreRedirect)
@@ -250,7 +253,7 @@ class FFParameters {
   Future<bool> completeFutures() => Future.wait(
         state.allParams.entries.where(isAsyncParam).map(
           (param) async {
-            final doc = await asyncParams[param.key](param.value)
+            final doc = await asyncParams[param.key]!(param.value)
                 .onError((_, __) => null);
             if (doc != null) {
               futureParamValues[param.key] = doc;
@@ -264,7 +267,7 @@ class FFParameters {
   dynamic getParam(
     String paramName,
     ParamType type, [
-    String collectionName,
+    String? collectionName,
   ]) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -284,9 +287,9 @@ class FFParameters {
 
 class FFRoute {
   const FFRoute({
-    @required this.name,
-    @required this.path,
-    @required this.builder,
+    required this.name,
+    required this.path,
+    required this.builder,
     this.requireAuth = false,
     this.asyncParams = const {},
     this.routes = const [],
@@ -324,13 +327,15 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50,
-                    height: 50,
-                    child: SpinKitFoldingCube(
-                      color: FlutterFlowTheme.of(context).primaryColor,
-                      size: 50,
+              ? Container(
+                  color: Colors.transparent,
+                  child: Center(
+                    child: Builder(
+                      builder: (context) => Image.asset(
+                        'assets/images/Artboard_1.png',
+                        width: double.infinity,
+                        fit: BoxFit.fill,
+                      ),
                     ),
                   ),
                 )
@@ -358,7 +363,7 @@ class FFRoute {
 
 class TransitionInfo {
   const TransitionInfo({
-    this.hasTransition,
+    required this.hasTransition,
     this.transitionType = PageTransitionType.fade,
     this.duration = const Duration(milliseconds: 300),
     this.alignment,
@@ -367,7 +372,7 @@ class TransitionInfo {
   final bool hasTransition;
   final PageTransitionType transitionType;
   final Duration duration;
-  final Alignment alignment;
+  final Alignment? alignment;
 
   static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }

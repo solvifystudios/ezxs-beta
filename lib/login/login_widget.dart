@@ -10,7 +10,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginWidget extends StatefulWidget {
-  const LoginWidget({Key key}) : super(key: key);
+  const LoginWidget({Key? key}) : super(key: key);
 
   @override
   _LoginWidgetState createState() => _LoginWidgetState();
@@ -18,9 +18,9 @@ class LoginWidget extends StatefulWidget {
 
 class _LoginWidgetState extends State<LoginWidget>
     with TickerProviderStateMixin {
-  TextEditingController emailAddressController;
-  TextEditingController passwordController;
-  bool passwordVisibility;
+  TextEditingController? emailAddressController;
+  TextEditingController? passwordController;
+  late bool passwordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final animationsMap = {
     'imageOnPageLoadAnimation': AnimationInfo(
@@ -77,7 +77,7 @@ class _LoginWidgetState extends State<LoginWidget>
                         width: 75,
                         height: 75,
                         fit: BoxFit.fitWidth,
-                      ).animated([animationsMap['imageOnPageLoadAnimation']]),
+                      ).animated([animationsMap['imageOnPageLoadAnimation']!]),
                     ],
                   ),
                   Padding(
@@ -245,8 +245,8 @@ class _LoginWidgetState extends State<LoginWidget>
 
                       final user = await signInWithEmail(
                         context,
-                        emailAddressController.text,
-                        passwordController.text,
+                        emailAddressController!.text,
+                        passwordController!.text,
                       );
                       if (user == null) {
                         return;

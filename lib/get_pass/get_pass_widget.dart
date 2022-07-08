@@ -7,7 +7,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class GetPassWidget extends StatefulWidget {
-  const GetPassWidget({Key key}) : super(key: key);
+  const GetPassWidget({Key? key}) : super(key: key);
 
   @override
   _GetPassWidgetState createState() => _GetPassWidgetState();

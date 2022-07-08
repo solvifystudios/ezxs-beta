@@ -8,7 +8,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeWidget extends StatefulWidget {
-  const HomeWidget({Key key}) : super(key: key);
+  const HomeWidget({Key? key}) : super(key: key);
 
   @override
   _HomeWidgetState createState() => _HomeWidgetState();
@@ -131,7 +131,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         ],
                       ),
                     ),
-                  ).animated([animationsMap['containerOnPageLoadAnimation1']]),
+                  ).animated([animationsMap['containerOnPageLoadAnimation1']!]),
                   Container(
                     width: MediaQuery.of(context).size.width * 0.44,
                     height: 120,
@@ -170,12 +170,12 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                         ],
                       ),
                     ),
-                  ).animated([animationsMap['containerOnPageLoadAnimation2']]),
+                  ).animated([animationsMap['containerOnPageLoadAnimation2']!]),
                 ],
               ),
             ),
             Text(
-              scanned,
+              scanned!,
               textAlign: TextAlign.center,
               style: FlutterFlowTheme.of(context).bodyText1.override(
                     fontFamily: 'Source Sans Pro',

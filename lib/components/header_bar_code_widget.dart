@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class HeaderBarCodeWidget extends StatefulWidget {
-  const HeaderBarCodeWidget({Key key}) : super(key: key);
+  const HeaderBarCodeWidget({Key? key}) : super(key: key);
 
   @override
   _HeaderBarCodeWidgetState createState() => _HeaderBarCodeWidgetState();

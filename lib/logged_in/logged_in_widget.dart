@@ -8,7 +8,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoggedInWidget extends StatefulWidget {
-  const LoggedInWidget({Key key}) : super(key: key);
+  const LoggedInWidget({Key? key}) : super(key: key);
 
   @override
   _LoggedInWidgetState createState() => _LoggedInWidgetState();
@@ -113,7 +113,7 @@ class _LoggedInWidgetState extends State<LoggedInWidget>
               width: 140,
               height: 140,
               fit: BoxFit.fitHeight,
-            ).animated([animationsMap['imageOnPageLoadAnimation']]),
+            ).animated([animationsMap['imageOnPageLoadAnimation']!]),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
               child: Text(
@@ -124,7 +124,7 @@ class _LoggedInWidgetState extends State<LoggedInWidget>
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                     ),
-              ).animated([animationsMap['textOnPageLoadAnimation1']]),
+              ).animated([animationsMap['textOnPageLoadAnimation1']!]),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 120),
@@ -136,7 +136,7 @@ class _LoggedInWidgetState extends State<LoggedInWidget>
                       fontSize: 20,
                       fontWeight: FontWeight.normal,
                     ),
-              ).animated([animationsMap['textOnPageLoadAnimation2']]),
+              ).animated([animationsMap['textOnPageLoadAnimation2']!]),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 10, 20, 10),
@@ -163,8 +163,8 @@ class _LoggedInWidgetState extends State<LoggedInWidget>
               ),
             ),
           ],
-        ).animated([animationsMap['columnOnPageLoadAnimation']]),
-      ).animated([animationsMap['containerOnPageLoadAnimation']]),
+        ).animated([animationsMap['columnOnPageLoadAnimation']!]),
+      ).animated([animationsMap['containerOnPageLoadAnimation']!]),
     );
   }
 }

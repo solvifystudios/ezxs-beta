@@ -7,7 +7,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProfileWidget extends StatefulWidget {
-  const ProfileWidget({Key key}) : super(key: key);
+  const ProfileWidget({Key? key}) : super(key: key);
 
   @override
   _ProfileWidgetState createState() => _ProfileWidgetState();

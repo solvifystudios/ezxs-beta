@@ -7,14 +7,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PassesMenuWidget extends StatefulWidget {
-  const PassesMenuWidget({Key key}) : super(key: key);
+  const PassesMenuWidget({Key? key}) : super(key: key);
 
   @override
   _PassesMenuWidgetState createState() => _PassesMenuWidgetState();
 }
 
 class _PassesMenuWidgetState extends State<PassesMenuWidget> {
-  TextEditingController searchFieldController;
+  TextEditingController? searchFieldController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
