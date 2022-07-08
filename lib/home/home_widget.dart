@@ -81,7 +81,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
         centerTitle: true,
         elevation: 1,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -200,20 +199,18 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                       setState(() {});
                     },
                     text: 'Scan QR',
+                    icon: Icon(
+                      FFIcons.kqrcode,
+                      size: 15,
+                    ),
                     options: FFButtonOptions(
                       width: 150,
                       height: 50,
-                      color: Color(0xFF4B39EF),
-                      textStyle:
-                          FlutterFlowTheme.of(context).subtitle2.override(
-                                fontFamily: 'Lexend Deca',
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.normal,
-                              ),
+                      color: Color(0xFF9ED6E4),
+                      textStyle: FlutterFlowTheme.of(context).subtitle1,
                       elevation: 2,
                       borderSide: BorderSide(
-                        color: Colors.transparent,
+                        color: Color(0xFFD1BB87),
                         width: 1,
                       ),
                     ),
@@ -283,7 +280,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                               style:
                                   FlutterFlowTheme.of(context).title1.override(
                                         fontFamily: 'Source Sans Pro',
-                                        color: Colors.white,
+                                        color: Color(0xFFD1BB87),
                                       ),
                             ),
                             Padding(
@@ -351,8 +348,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                       boxShadow: [
                         BoxShadow(
                           blurRadius: 5,
-                          color: Color(0x3B000000),
+                          color: Color(0x63000000),
                           offset: Offset(0, 2),
+                          spreadRadius: 0.2,
                         )
                       ],
                       borderRadius: BorderRadius.circular(8),
@@ -454,6 +452,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             blurRadius: 5,
                             color: Color(0x3B000000),
                             offset: Offset(0, 2),
+                            spreadRadius: 0.5,
                           )
                         ],
                         borderRadius: BorderRadius.circular(8),

@@ -9,9 +9,8 @@ import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 
@@ -117,52 +116,83 @@ class _NavBarPageState extends State<NavBarPage> {
       'Home': HomeWidget(),
       'PassesMenu': PassesMenuWidget(),
       'Tonight': TonightWidget(),
-      'BarCodeScanner': BarCodeScannerWidget(),
+      'Profile': ProfileWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
       body: tabs[_currentPage],
-      bottomNavigationBar: GNav(
-        selectedIndex: currentIndex,
-        onTabChange: (i) =>
-            setState(() => _currentPage = tabs.keys.toList()[i]),
-        backgroundColor: Color(0xFF033A7B),
-        color: Color(0xFF86D5F3),
-        activeColor: FlutterFlowTheme.of(context).primaryBtnText,
-        tabBackgroundColor: Color(0xFF100007),
-        tabBorderRadius: 12,
-        tabMargin: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-        padding: EdgeInsetsDirectional.fromSTEB(30, 12, 30, 20),
-        gap: 0,
-        mainAxisAlignment: MainAxisAlignment.center,
-        duration: Duration(milliseconds: 500),
-        haptic: true,
-        tabs: [
-          GButton(
-            icon: currentIndex == 0 ? Icons.home : Icons.home_filled,
-            text: '',
-            iconSize: 24,
-            backgroundColor: FlutterFlowTheme.of(context).lineColor,
+      extendBody: true,
+      bottomNavigationBar: FloatingNavbar(
+        currentIndex: currentIndex,
+        onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
+        backgroundColor: Color(0xAD000000),
+        selectedItemColor: FlutterFlowTheme.of(context).gray200,
+        unselectedItemColor: FlutterFlowTheme.of(context).grayIcon,
+        selectedBackgroundColor: Color(0x00FFFFFF),
+        borderRadius: 8,
+        itemBorderRadius: 22,
+        margin: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+        padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 15),
+        width: double.infinity,
+        elevation: 0,
+        items: [
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  currentIndex == 0 ? FFIcons.khome : Icons.home_filled,
+                  color: currentIndex == 0
+                      ? FlutterFlowTheme.of(context).gray200
+                      : FlutterFlowTheme.of(context).grayIcon,
+                  size: 30,
+                ),
+              ],
+            ),
           ),
-          GButton(
-            icon: currentIndex == 1
-                ? FontAwesomeIcons.ticketAlt
-                : FontAwesomeIcons.ticketAlt,
-            text: '',
-            iconSize: 24,
-            backgroundColor: Colors.white,
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  currentIndex == 1 ? FFIcons.kticket : FFIcons.kticket,
+                  color: currentIndex == 1
+                      ? FlutterFlowTheme.of(context).gray200
+                      : FlutterFlowTheme.of(context).grayIcon,
+                  size: 30,
+                ),
+              ],
+            ),
           ),
-          GButton(
-            icon: currentIndex == 2 ? Icons.insights : Icons.person_search,
-            text: '•',
-            iconSize: 24,
-            backgroundColor: Colors.white,
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  currentIndex == 2 ? Icons.people : Icons.person_search,
+                  color: currentIndex == 2
+                      ? FlutterFlowTheme.of(context).gray200
+                      : FlutterFlowTheme.of(context).grayIcon,
+                  size: 30,
+                ),
+              ],
+            ),
           ),
-          GButton(
-            icon: Icons.qr_code_scanner,
-            text: '',
-            iconSize: 24,
-            backgroundColor: FlutterFlowTheme.of(context).lineColor,
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  currentIndex == 3
+                      ? Icons.account_circle_rounded
+                      : Icons.account_circle_outlined,
+                  color: currentIndex == 3
+                      ? FlutterFlowTheme.of(context).gray200
+                      : FlutterFlowTheme.of(context).grayIcon,
+                  size: 30,
+                ),
+              ],
+            ),
           )
         ],
       ),

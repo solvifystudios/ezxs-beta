@@ -86,16 +86,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => LoggedInWidget(),
             ),
             FFRoute(
+              name: 'Production',
+              path: 'production',
+              builder: (context, params) => ProductionWidget(),
+            ),
+            FFRoute(
               name: 'Home',
               path: 'home',
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'Home')
                   : HomeWidget(),
-            ),
-            FFRoute(
-              name: 'Production',
-              path: 'production',
-              builder: (context, params) => ProductionWidget(),
             ),
             FFRoute(
               name: 'Venue',
@@ -129,7 +129,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'Profile',
               path: 'profile',
-              builder: (context, params) => ProfileWidget(),
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'Profile')
+                  : ProfileWidget(),
             ),
             FFRoute(
               name: 'ProfileSetting',
@@ -144,9 +146,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'BarCodeScanner',
               path: 'barCodeScanner',
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'BarCodeScanner')
-                  : BarCodeScannerWidget(),
+              builder: (context, params) => BarCodeScannerWidget(),
             ),
             FFRoute(
               name: 'scanner',

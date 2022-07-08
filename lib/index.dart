@@ -1,8 +1,8 @@
 // Export pages
 export 'login/login_widget.dart' show LoginWidget;
 export 'logged_in/logged_in_widget.dart' show LoggedInWidget;
-export 'home/home_widget.dart' show HomeWidget;
 export 'production/production_widget.dart' show ProductionWidget;
+export 'home/home_widget.dart' show HomeWidget;
 export 'venue/venue_widget.dart' show VenueWidget;
 export 'edit_event/edit_event_widget.dart' show EditEventWidget;
 export 'passes_menu/passes_menu_widget.dart' show PassesMenuWidget;
