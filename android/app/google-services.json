@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "578114796578",
+    "project_id": "ezxs-beta",
+    "storage_bucket": "ezxs-beta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578114796578:android:d3bcb87a81d5376c6a5e7b",
+        "android_client_info": {
+          "package_name": "com.mycompany.ezxsbeta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "578114796578-qpala6m5dtv5sukn9eml42v3o0599bed.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.ezxsbeta",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "578114796578-od1kqmeku8s01q3kgqobs6710notidvb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOTBEK-APoeQ9Yrrxzm8JjD9BPgV2_si4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "578114796578-od1kqmeku8s01q3kgqobs6710notidvb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "578114796578-2681p542cfffahm39g5lgjhickhov96g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.ezxsbeta"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
