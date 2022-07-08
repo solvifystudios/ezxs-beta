@@ -328,7 +328,7 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: Colors.transparent,
+                  color: FlutterFlowTheme.of(context).lineColor,
                   child: Center(
                     child: Builder(
                       builder: (context) => Image.asset(
