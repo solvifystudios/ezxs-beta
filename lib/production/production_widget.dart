@@ -38,7 +38,7 @@ class _ProductionWidgetState extends State<ProductionWidget> {
         title: Text(
           'Event Name',
           style: FlutterFlowTheme.of(context).subtitle2.override(
-                fontFamily: 'Source Sans Pro',
+                fontFamily: FlutterFlowTheme.of(context).subtitle2Family,
                 color: Colors.white,
               ),
         ),
@@ -92,7 +92,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .title1
                                         .override(
-                                          fontFamily: 'Source Sans Pro',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .title1Family,
                                           color: Colors.white,
                                         ),
                                   ),
@@ -115,7 +117,8 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .title1
                                       .override(
-                                        fontFamily: 'Source Sans Pro',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .title1Family,
                                         color: Colors.white,
                                         fontSize: 36,
                                         fontWeight: FontWeight.normal,
@@ -130,7 +133,8 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Source Sans Pro',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .bodyText1Family,
                                         color: Color(0xB3FFFFFF),
                                       ),
                                 ),
@@ -149,7 +153,8 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText2
                                     .override(
-                                      fontFamily: 'Source Sans Pro',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyText2Family,
                                       color: FlutterFlowTheme.of(context)
                                           .tertiaryColor,
                                     ),
@@ -166,7 +171,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText2
                                           .override(
-                                            fontFamily: 'Source Sans Pro',
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyText2Family,
                                             color: Color(0xB3FFFFFF),
                                             fontWeight: FontWeight.w300,
                                           ),
@@ -178,7 +185,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .title3
                                         .override(
-                                          fontFamily: 'Source Sans Pro',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .title3Family,
                                           color: FlutterFlowTheme.of(context)
                                               .tertiaryColor,
                                         ),
@@ -335,7 +344,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                                       .bodyText1
                                                       .override(
                                                         fontFamily:
-                                                            'Source Sans Pro',
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1Family,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -450,7 +461,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .subtitle2
                                               .override(
-                                                fontFamily: 'Source Sans Pro',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .subtitle2Family,
                                                 color: Color(0xFF090F13),
                                               ),
                                         ),
@@ -464,7 +477,10 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(
-                                                  fontFamily: 'Source Sans Pro',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyText1Family,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .grayIcon,
@@ -577,7 +593,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .subtitle2
                                               .override(
-                                                fontFamily: 'Source Sans Pro',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .subtitle2Family,
                                                 color: Color(0xFF090F13),
                                               ),
                                         ),
@@ -591,7 +609,10 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(
-                                                  fontFamily: 'Source Sans Pro',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyText1Family,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .grayIcon,

@@ -49,7 +49,8 @@ class _HeaderBarCodeWidgetState extends State<HeaderBarCodeWidget> {
                       Text(
                         '\$425.24',
                         style: FlutterFlowTheme.of(context).title1.override(
-                              fontFamily: 'Source Sans Pro',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).title1Family,
                               fontSize: 36,
                             ),
                       ),
@@ -80,7 +81,8 @@ class _HeaderBarCodeWidgetState extends State<HeaderBarCodeWidget> {
                             color: FlutterFlowTheme.of(context).primaryColor,
                             textStyle:
                                 FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Source Sans Pro',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyText1Family,
                                       color: Colors.white,
                                     ),
                             elevation: 2,
@@ -130,7 +132,8 @@ class _HeaderBarCodeWidgetState extends State<HeaderBarCodeWidget> {
                     child: Text(
                       '/ \$24,999',
                       style: FlutterFlowTheme.of(context).subtitle2.override(
-                            fontFamily: 'Source Sans Pro',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).subtitle2Family,
                             color: FlutterFlowTheme.of(context).primaryColor,
                           ),
                     ),

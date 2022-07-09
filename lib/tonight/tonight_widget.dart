@@ -25,7 +25,7 @@ class _TonightWidgetState extends State<TonightWidget> {
         title: Text(
           'Real Time Analytics',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Source Sans Pro',
+                fontFamily: FlutterFlowTheme.of(context).title2Family,
                 color: Colors.white,
                 fontSize: 22,
               ),

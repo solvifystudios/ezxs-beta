@@ -59,7 +59,8 @@ class _PassGeneratorWidgetState extends State<PassGeneratorWidget> {
                         child: Text(
                           'Back',
                           style: FlutterFlowTheme.of(context).title2.override(
-                                fontFamily: 'Source Sans Pro',
+                                fontFamily:
+                                    FlutterFlowTheme.of(context).title2Family,
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 16,
                               ),
@@ -73,7 +74,7 @@ class _PassGeneratorWidgetState extends State<PassGeneratorWidget> {
                   child: Text(
                     'Page Title',
                     style: FlutterFlowTheme.of(context).title2.override(
-                          fontFamily: 'Source Sans Pro',
+                          fontFamily: FlutterFlowTheme.of(context).title2Family,
                           color: FlutterFlowTheme.of(context).primaryText,
                           fontSize: 22,
                         ),

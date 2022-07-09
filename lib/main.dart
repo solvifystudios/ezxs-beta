@@ -10,7 +10,6 @@ import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 
@@ -18,6 +17,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await FlutterFlowTheme.initialize();
+
+  FFAppState(); // Initialize FFAppState
 
   runApp(MyApp());
 }
@@ -121,78 +122,63 @@ class _NavBarPageState extends State<NavBarPage> {
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
       body: tabs[_currentPage],
-      extendBody: true,
-      bottomNavigationBar: FloatingNavbar(
+      bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
-        backgroundColor: Color(0xAD000000),
+        backgroundColor: Color(0xBF000000),
         selectedItemColor: FlutterFlowTheme.of(context).gray200,
         unselectedItemColor: FlutterFlowTheme.of(context).grayIcon,
-        selectedBackgroundColor: Color(0x00FFFFFF),
-        borderRadius: 8,
-        itemBorderRadius: 22,
-        margin: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-        padding: EdgeInsetsDirectional.fromSTEB(0, 8, 0, 15),
-        width: double.infinity,
-        elevation: 0,
-        items: [
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  currentIndex == 0 ? FFIcons.khome : Icons.home_filled,
-                  color: currentIndex == 0
-                      ? FlutterFlowTheme.of(context).gray200
-                      : FlutterFlowTheme.of(context).grayIcon,
-                  size: 30,
-                ),
-              ],
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home_filled,
+              size: 24,
             ),
+            activeIcon: Icon(
+              FFIcons.khome,
+              size: 30,
+            ),
+            label: '',
+            tooltip: '',
           ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  currentIndex == 1 ? FFIcons.kticket : FFIcons.kticket,
-                  color: currentIndex == 1
-                      ? FlutterFlowTheme.of(context).gray200
-                      : FlutterFlowTheme.of(context).grayIcon,
-                  size: 30,
-                ),
-              ],
+          BottomNavigationBarItem(
+            icon: Icon(
+              FFIcons.kticket,
+              size: 24,
             ),
+            activeIcon: Icon(
+              FFIcons.kticket,
+              size: 30,
+            ),
+            label: '',
+            tooltip: '',
           ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  currentIndex == 2 ? Icons.people : Icons.person_search,
-                  color: currentIndex == 2
-                      ? FlutterFlowTheme.of(context).gray200
-                      : FlutterFlowTheme.of(context).grayIcon,
-                  size: 30,
-                ),
-              ],
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person_search,
+              size: 24,
             ),
+            activeIcon: Icon(
+              Icons.people,
+              size: 30,
+            ),
+            label: '',
+            tooltip: '',
           ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  currentIndex == 3
-                      ? Icons.account_circle_rounded
-                      : Icons.account_circle_outlined,
-                  color: currentIndex == 3
-                      ? FlutterFlowTheme.of(context).gray200
-                      : FlutterFlowTheme.of(context).grayIcon,
-                  size: 30,
-                ),
-              ],
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.account_circle_outlined,
+              size: 24,
             ),
+            activeIcon: Icon(
+              Icons.account_circle_rounded,
+              size: 30,
+            ),
+            label: '',
+            tooltip: '',
           )
         ],
       ),

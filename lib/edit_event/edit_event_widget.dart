@@ -87,7 +87,8 @@ class _EditEventWidgetState extends State<EditEventWidget> {
                           labelStyle: FlutterFlowTheme.of(context)
                               .title3
                               .override(
-                                fontFamily: 'Source Sans Pro',
+                                fontFamily:
+                                    FlutterFlowTheme.of(context).title3Family,
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 fontWeight: FontWeight.normal,
@@ -326,11 +327,13 @@ class _EditEventWidgetState extends State<EditEventWidget> {
                       width: 270,
                       height: 50,
                       color: FlutterFlowTheme.of(context).primaryColor,
-                      textStyle:
-                          FlutterFlowTheme.of(context).subtitle1.override(
-                                fontFamily: 'Source Sans Pro',
-                                color: Colors.white,
-                              ),
+                      textStyle: FlutterFlowTheme.of(context)
+                          .subtitle1
+                          .override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).subtitle1Family,
+                            color: Colors.white,
+                          ),
                       elevation: 3,
                       borderSide: BorderSide(
                         color: Colors.transparent,

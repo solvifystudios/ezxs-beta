@@ -1,7 +1,7 @@
+import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -15,6 +15,9 @@ class HomeWidget extends StatefulWidget {
 }
 
 class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
+  ApiCallResponse? ticketRedeem;
+  var scanned = '';
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   final animationsMap = {
     'containerOnPageLoadAnimation1': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
@@ -46,8 +49,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
       ),
     ),
   };
-  final scaffoldKey = GlobalKey<ScaffoldState>();
-  var scanned = '';
 
   @override
   void initState() {
@@ -80,6 +81,28 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
         actions: [],
         centerTitle: true,
         elevation: 1,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          scanned = await FlutterBarcodeScanner.scanBarcode(
+            '#C62828', // scanning line color
+            'Cancel', // cancel button text
+            true, // whether to show the flash icon
+            ScanMode.QR,
+          );
+
+          ticketRedeem = await EventTicketsticketredeemCall.call();
+          context.pushNamed('TicketScanned');
+
+          setState(() {});
+        },
+        backgroundColor: Color(0xFFD1BB87),
+        elevation: 8,
+        child: Icon(
+          FFIcons.kqrcode,
+          color: Colors.black,
+          size: 24,
+        ),
       ),
       body: SafeArea(
         child: ListView(
@@ -173,51 +196,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                 ],
               ),
             ),
-            Text(
-              scanned!,
-              textAlign: TextAlign.center,
-              style: FlutterFlowTheme.of(context).bodyText1.override(
-                    fontFamily: 'Source Sans Pro',
-                    color: Colors.white,
-                  ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(24, 40, 24, 40),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FFButtonWidget(
-                    onPressed: () async {
-                      scanned = await FlutterBarcodeScanner.scanBarcode(
-                        '#C62828', // scanning line color
-                        'Cancel', // cancel button text
-                        true, // whether to show the flash icon
-                        ScanMode.QR,
-                      );
-
-                      setState(() {});
-                    },
-                    text: 'Scan QR',
-                    icon: Icon(
-                      FFIcons.kqrcode,
-                      size: 15,
-                    ),
-                    options: FFButtonOptions(
-                      width: 150,
-                      height: 50,
-                      color: Color(0xFF9ED6E4),
-                      textStyle: FlutterFlowTheme.of(context).subtitle1,
-                      elevation: 2,
-                      borderSide: BorderSide(
-                        color: Color(0xFFD1BB87),
-                        width: 1,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
             ListView(
               padding: EdgeInsets.zero,
               shrinkWrap: true,
@@ -263,7 +241,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Source Sans Pro',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyText2Family,
                                           color: Colors.white,
                                         ),
                                   ),
@@ -279,7 +259,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                               'Event Name',
                               style:
                                   FlutterFlowTheme.of(context).title1.override(
-                                        fontFamily: 'Source Sans Pro',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .title1Family,
                                         color: Color(0xFFD1BB87),
                                       ),
                             ),
@@ -296,7 +277,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Source Sans Pro',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyText2Family,
                                           color: Colors.white,
                                         ),
                                   ),
@@ -312,7 +295,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText2
                                               .override(
-                                                fontFamily: 'Source Sans Pro',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText2Family,
                                                 color: Color(0xB3FFFFFF),
                                                 fontWeight: FontWeight.w300,
                                               ),
@@ -324,7 +309,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         style: FlutterFlowTheme.of(context)
                                             .title3
                                             .override(
-                                              fontFamily: 'Source Sans Pro',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .title3Family,
                                               color: Colors.white,
                                             ),
                                       ),
@@ -406,7 +393,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText2
                                             .override(
-                                              fontFamily: 'Source Sans Pro',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText2Family,
                                               color: Color(0xB3FFFFFF),
                                               fontWeight: FontWeight.w300,
                                             ),
@@ -515,7 +504,9 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText2
                                               .override(
-                                                fontFamily: 'Source Sans Pro',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText2Family,
                                                 color: Color(0xB3FFFFFF),
                                                 fontWeight: FontWeight.w300,
                                               ),
@@ -539,6 +530,14 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                   ),
                 ),
               ],
+            ),
+            Text(
+              scanned!,
+              textAlign: TextAlign.center,
+              style: FlutterFlowTheme.of(context).bodyText1.override(
+                    fontFamily: FlutterFlowTheme.of(context).bodyText1Family,
+                    color: FlutterFlowTheme.of(context).primaryBtnText,
+                  ),
             ),
           ],
         ),

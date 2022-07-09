@@ -59,7 +59,8 @@ class _GetPassWidgetState extends State<GetPassWidget> {
                         child: Text(
                           'Back',
                           style: FlutterFlowTheme.of(context).title2.override(
-                                fontFamily: 'Source Sans Pro',
+                                fontFamily:
+                                    FlutterFlowTheme.of(context).title2Family,
                                 color: FlutterFlowTheme.of(context).primaryText,
                                 fontSize: 16,
                               ),
@@ -73,7 +74,7 @@ class _GetPassWidgetState extends State<GetPassWidget> {
                   child: Text(
                     'Page Title',
                     style: FlutterFlowTheme.of(context).title2.override(
-                          fontFamily: 'Source Sans Pro',
+                          fontFamily: FlutterFlowTheme.of(context).title2Family,
                           color: FlutterFlowTheme.of(context).primaryText,
                           fontSize: 22,
                         ),
@@ -110,7 +111,8 @@ class _GetPassWidgetState extends State<GetPassWidget> {
                   height: 40,
                   color: FlutterFlowTheme.of(context).primaryColor,
                   textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Source Sans Pro',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).subtitle2Family,
                         color: Colors.white,
                       ),
                   borderSide: BorderSide(

@@ -39,7 +39,7 @@ class _VenueWidgetState extends State<VenueWidget> {
         title: Text(
           'Venue Name',
           style: FlutterFlowTheme.of(context).subtitle2.override(
-                fontFamily: 'Source Sans Pro',
+                fontFamily: FlutterFlowTheme.of(context).subtitle2Family,
                 color: Colors.white,
               ),
         ),
@@ -79,7 +79,8 @@ class _VenueWidgetState extends State<VenueWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Source Sans Pro',
+                                    fontFamily: FlutterFlowTheme.of(context)
+                                        .bodyText1Family,
                                     color: Colors.white,
                                   ),
                             ),
@@ -97,7 +98,8 @@ class _VenueWidgetState extends State<VenueWidget> {
                               ' # of Tickets',
                               style:
                                   FlutterFlowTheme.of(context).title2.override(
-                                        fontFamily: 'Source Sans Pro',
+                                        fontFamily: FlutterFlowTheme.of(context)
+                                            .title2Family,
                                         color: Colors.white,
                                         fontSize: 36,
                                       ),
@@ -165,7 +167,8 @@ class _VenueWidgetState extends State<VenueWidget> {
                       child: Text(
                         'Start-End Time',
                         style: FlutterFlowTheme.of(context).bodyText2.override(
-                              fontFamily: 'Source Sans Pro',
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyText2Family,
                               color: FlutterFlowTheme.of(context).primaryColor,
                             ),
                       ),
@@ -282,7 +285,9 @@ class _VenueWidgetState extends State<VenueWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Source Sans Pro',
+                                          fontFamily:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyText1Family,
                                           color: FlutterFlowTheme.of(context)
                                               .primaryColor,
                                         ),

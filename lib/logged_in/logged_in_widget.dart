@@ -150,7 +150,8 @@ class _LoggedInWidgetState extends State<LoggedInWidget>
                   height: 50,
                   color: FlutterFlowTheme.of(context).primaryColor,
                   textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Source Sans Pro',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).subtitle2Family,
                         color: Colors.white,
                         fontSize: 18,
                       ),

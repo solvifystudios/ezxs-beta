@@ -28,7 +28,7 @@ class _ScannerWidgetState extends State<ScannerWidget> {
         title: Text(
           'Bar code scanner | QR',
           style: FlutterFlowTheme.of(context).title1.override(
-                fontFamily: 'Source Sans Pro',
+                fontFamily: FlutterFlowTheme.of(context).title1Family,
                 color: FlutterFlowTheme.of(context).primaryBtnText,
               ),
         ),
@@ -96,7 +96,8 @@ class _ScannerWidgetState extends State<ScannerWidget> {
                   height: 40,
                   color: FlutterFlowTheme.of(context).primaryColor,
                   textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Source Sans Pro',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).subtitle2Family,
                         color: Colors.white,
                       ),
                   borderSide: BorderSide(

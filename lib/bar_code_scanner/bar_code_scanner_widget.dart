@@ -27,7 +27,7 @@ class _BarCodeScannerWidgetState extends State<BarCodeScannerWidget> {
         title: Text(
           'DEMO SCAN',
           style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Source Sans Pro',
+                fontFamily: FlutterFlowTheme.of(context).title2Family,
                 color: Colors.white,
                 fontSize: 22,
               ),
@@ -61,7 +61,8 @@ class _BarCodeScannerWidgetState extends State<BarCodeScannerWidget> {
                     'Not Scanned Yet',
                   ),
                   style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Source Sans Pro',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).bodyText1Family,
                         fontSize: 18,
                       ),
                 ),
@@ -83,7 +84,8 @@ class _BarCodeScannerWidgetState extends State<BarCodeScannerWidget> {
                   height: 55,
                   color: FlutterFlowTheme.of(context).primaryColor,
                   textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Source Sans Pro',
+                        fontFamily:
+                            FlutterFlowTheme.of(context).subtitle2Family,
                         color: Colors.white,
                         fontSize: 20,
                       ),

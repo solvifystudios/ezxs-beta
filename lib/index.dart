@@ -16,3 +16,4 @@ export 'bar_code_scanner/bar_code_scanner_widget.dart'
 export 'scanner/scanner_widget.dart' show ScannerWidget;
 export 'get_pass/get_pass_widget.dart' show GetPassWidget;
 export 'pass_generator/pass_generator_widget.dart' show PassGeneratorWidget;
+export 'ticket_scanned/ticket_scanned_widget.dart' show TicketScannedWidget;

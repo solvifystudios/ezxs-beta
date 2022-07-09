@@ -162,6 +162,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'PassGenerator',
               path: 'passGenerator',
               builder: (context, params) => PassGeneratorWidget(),
+            ),
+            FFRoute(
+              name: 'TicketScanned',
+              path: 'ticketScanned',
+              builder: (context, params) => TicketScannedWidget(
+                redeemTicket: params.getParam('redeemTicket', ParamType.String),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

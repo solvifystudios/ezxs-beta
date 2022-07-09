@@ -265,7 +265,8 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget>
                             'In Progress',
                             style:
                                 FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Source Sans Pro',
+                                      fontFamily: FlutterFlowTheme.of(context)
+                                          .bodyText1Family,
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBtnText,
                                     ),
@@ -276,7 +277,8 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget>
                     Text(
                       'Tuesday, 10:00am',
                       style: FlutterFlowTheme.of(context).title1.override(
-                            fontFamily: 'Source Sans Pro',
+                            fontFamily:
+                                FlutterFlowTheme.of(context).title1Family,
                             color: FlutterFlowTheme.of(context).primaryColor,
                           ),
                     ).animated([animationsMap['textOnPageLoadAnimation3']!]),
@@ -500,7 +502,8 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget>
                           style: FlutterFlowTheme.of(context)
                               .bodyText1
                               .override(
-                                fontFamily: 'Source Sans Pro',
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .bodyText1Family,
                                 color:
                                     FlutterFlowTheme.of(context).primaryBtnText,
                               ),
@@ -517,7 +520,8 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget>
                     height: 50,
                     color: FlutterFlowTheme.of(context).primaryColor,
                     textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                          fontFamily: 'Source Sans Pro',
+                          fontFamily:
+                              FlutterFlowTheme.of(context).subtitle2Family,
                           color: Colors.white,
                         ),
                     elevation: 3,
