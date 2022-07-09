@@ -71,12 +71,16 @@ class _LoginWidgetState extends State<LoginWidget>
                 children: [
                   Row(
                     mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Image.asset(
-                        'assets/images/EZXSLOGODEMOPURPLE.png',
-                        width: 75,
-                        height: 75,
-                        fit: BoxFit.fitWidth,
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image.asset(
+                          'assets/images/AP_-_JPEG.png',
+                          width: 75,
+                          height: 75,
+                          fit: BoxFit.fitWidth,
+                        ),
                       ).animated([animationsMap['imageOnPageLoadAnimation']!]),
                     ],
                   ),
@@ -84,16 +88,22 @@ class _LoginWidgetState extends State<LoginWidget>
                     padding: EdgeInsetsDirectional.fromSTEB(0, 32, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
                           width: 140,
                           height: 50,
+                          constraints: BoxConstraints(
+                            maxWidth: MediaQuery.of(context).size.width,
+                          ),
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context).platinum,
                           ),
                           alignment: AlignmentDirectional(-1, 0),
                           child: Text(
                             'Sign In',
+                            textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context).title2.override(
                                   fontFamily: 'Lexend Deca',
                                   color: Color(0xFF090F13),
@@ -110,15 +120,17 @@ class _LoginWidgetState extends State<LoginWidget>
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Text(
-                          'Get started by signing into your admin account below',
-                          style:
-                              FlutterFlowTheme.of(context).bodyText2.override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Color(0xFF57636C),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                  ),
+                        Expanded(
+                          child: Text(
+                            'Get started by signing into your admin account below',
+                            style:
+                                FlutterFlowTheme.of(context).bodyText2.override(
+                                      fontFamily: 'Lexend Deca',
+                                      color: Color(0xFF57636C),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                          ),
                         ),
                       ],
                     ),
