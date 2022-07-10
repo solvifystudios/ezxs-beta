@@ -277,9 +277,8 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   8, 8, 8, 8),
                                           child: Icon(
-                                            Icons.monetization_on_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .tertiaryColor,
+                                            Icons.storefront_outlined,
+                                            color: Color(0xFFD1BB87),
                                             size: 24,
                                           ),
                                         ),
@@ -406,9 +405,8 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             8, 8, 8, 8),
                                         child: Icon(
-                                          Icons.monetization_on_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .tertiaryColor,
+                                          Icons.storefront,
+                                          color: Color(0xFFD1BB87),
                                           size: 24,
                                         ),
                                       ),
@@ -538,10 +536,9 @@ class _ProductionWidgetState extends State<ProductionWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             8, 8, 8, 8),
                                         child: Icon(
-                                          Icons.monetization_on_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .tertiaryColor,
-                                          size: 24,
+                                          Icons.storefront_sharp,
+                                          color: Color(0xFFD1BB87),
+                                          size: 22,
                                         ),
                                       ),
                                     ),

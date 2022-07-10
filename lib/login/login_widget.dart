@@ -1,12 +1,10 @@
 import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginWidget extends StatefulWidget {
@@ -292,7 +290,7 @@ class _LoginWidgetState extends State<LoginWidget>
             Expanded(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FFButtonWidget(
                     onPressed: () async {
@@ -321,70 +319,6 @@ class _LoginWidgetState extends State<LoginWidget>
                         width: 1,
                       ),
                       borderRadius: BorderRadius.circular(40),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(24, 24, 24, 24),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 30,
-                          borderWidth: 1,
-                          buttonSize: 50,
-                          fillColor: Color(0xFFDBE2E7),
-                          icon: FaIcon(
-                            FontAwesomeIcons.google,
-                            color: Color(0xFF57636C),
-                            size: 20,
-                          ),
-                          onPressed: () async {
-                            GoRouter.of(context).prepareAuthEvent();
-                            final user = await signInWithGoogle(context);
-                            if (user == null) {
-                              return;
-                            }
-                            context.goNamedAuth('Home', mounted);
-                          },
-                        ),
-                        FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 30,
-                          borderWidth: 1,
-                          buttonSize: 50,
-                          fillColor: Color(0xFFDBE2E7),
-                          icon: FaIcon(
-                            FontAwesomeIcons.apple,
-                            color: Color(0xFF57636C),
-                            size: 20,
-                          ),
-                          onPressed: () async {
-                            GoRouter.of(context).prepareAuthEvent();
-                            final user = await signInWithApple(context);
-                            if (user == null) {
-                              return;
-                            }
-                            context.goNamedAuth('Home', mounted);
-                          },
-                        ),
-                        FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          borderRadius: 30,
-                          borderWidth: 1,
-                          buttonSize: 50,
-                          fillColor: Color(0xFFDBE2E7),
-                          icon: FaIcon(
-                            FontAwesomeIcons.facebookF,
-                            color: Color(0xFF57636C),
-                            size: 20,
-                          ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
-                          },
-                        ),
-                      ],
                     ),
                   ),
                 ],

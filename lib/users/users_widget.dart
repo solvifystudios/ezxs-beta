@@ -47,7 +47,7 @@ class _UsersWidgetState extends State<UsersWidget> {
           },
         ),
         title: Text(
-          'Add Members',
+          'Pass Holders',
           style: FlutterFlowTheme.of(context).title3,
         ),
         actions: [],

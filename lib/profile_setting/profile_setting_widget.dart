@@ -326,8 +326,8 @@ class _ProfileSettingWidgetState extends State<ProfileSettingWidget> {
                           style: FlutterFlowTheme.of(context).bodyText2,
                         ),
                         tileColor: Colors.white,
-                        activeColor: Color(0xFF4B39EF),
-                        activeTrackColor: Color(0x8D4B39EF),
+                        activeColor: Color(0xFFD1BB87),
+                        activeTrackColor: Color(0x63000000),
                         dense: false,
                         controlAffinity: ListTileControlAffinity.trailing,
                       ),
@@ -345,7 +345,7 @@ class _ProfileSettingWidgetState extends State<ProfileSettingWidget> {
                           options: FFButtonOptions(
                             width: 230,
                             height: 50,
-                            color: Color(0xFF4B39EF),
+                            color: Color(0xBF000000),
                             textStyle:
                                 FlutterFlowTheme.of(context).bodyText2.override(
                                       fontFamily: 'Lexend Deca',

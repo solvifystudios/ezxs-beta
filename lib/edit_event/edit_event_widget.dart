@@ -39,7 +39,7 @@ class _EditEventWidgetState extends State<EditEventWidget> {
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
         title: Text(
-          'Create Task',
+          'Create Event',
           style: FlutterFlowTheme.of(context).title2,
         ),
         actions: [
@@ -322,7 +322,7 @@ class _EditEventWidgetState extends State<EditEventWidget> {
                     onPressed: () {
                       print('Button pressed ...');
                     },
-                    text: 'Create Task',
+                    text: 'Create Event ',
                     options: FFButtonOptions(
                       width: 270,
                       height: 50,

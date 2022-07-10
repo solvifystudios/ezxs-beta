@@ -45,7 +45,7 @@ class _TicketScannedWidgetState extends State<TicketScannedWidget> {
                       height: 200,
                       fit: BoxFit.cover,
                       frameRate: FrameRate(60),
-                      repeat: false,
+                      reverse: true,
                       animate: true,
                     ),
                   ],

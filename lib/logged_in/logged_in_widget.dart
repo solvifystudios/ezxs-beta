@@ -92,13 +92,13 @@ class _LoggedInWidgetState extends State<LoggedInWidget>
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xFF1E2429),
+      backgroundColor: Color(0xFFE53935),
       body: Container(
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF4B39EF), Color(0xFFEE8B60)],
+            colors: [Color(0xFFD1BB87), Color(0xFFD1BB87)],
             stops: [0, 1],
             begin: AlignmentDirectional(1, -1),
             end: AlignmentDirectional(-1, 1),

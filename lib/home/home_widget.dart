@@ -1,4 +1,3 @@
-import '../backend/api_requests/api_calls.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -15,9 +14,6 @@ class HomeWidget extends StatefulWidget {
 }
 
 class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
-  ApiCallResponse? ticketRedeem;
-  var scanned = '';
-  final scaffoldKey = GlobalKey<ScaffoldState>();
   final animationsMap = {
     'containerOnPageLoadAnimation1': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
@@ -49,6 +45,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
       ),
     ),
   };
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  var scanned = '';
 
   @override
   void initState() {
@@ -91,8 +89,12 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
             ScanMode.QR,
           );
 
-          ticketRedeem = await EventTicketsticketredeemCall.call();
-          context.pushNamed('TicketScanned');
+          context.pushNamed(
+            'TicketScanned',
+            queryParams: {
+              'redeemTicket': serializeParam('', ParamType.String),
+            }.withoutNulls,
+          );
 
           setState(() {});
         },
