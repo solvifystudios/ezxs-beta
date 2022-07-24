@@ -5,37 +5,24 @@ import 'api_manager.dart';
 export 'api_manager.dart' show ApiCallResponse;
 
 class IssueTicketCall {
-  static Future<ApiCallResponse> call() {
+  static Future<ApiCallResponse> call({
+    String? jwt = '',
+  }) {
     final body = '''
 {
-"ticketNumber": "string",
- "ticketTypeId": "1thBDl7i3uU20AIRAzWeeY",
-    "event": {
-    "id": "0WLOYZqeaLNE19klAKYPBO",
 
-        "production": {
-            "venueid": "5CI7iR9dDgrJT5COmptlPN",
-        "uid": "533O9lWjKyIbD5ANsiO0UF",
-        "name": "EZXS ALL ACCESS"
-        },
+"name": "DEMOMAN",
 
-        "venue": {
+"address": "1737 Grafton St, Halifax, NS B3J 2C6, Cansada",
+"timezone": "UTC"
 
-           
-
-        "uid": "string",
-        "name": "Hide n Seek",
-        "address": "1737 Grafton St, Halifax, NS B3J 2C6, Canada"
-
-        }
-    }
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Issue Ticket',
-      apiUrl: 'https://api.pub1.passkit.io/eventTickets/ticket/id',
+      apiUrl: 'https://api.pub1.passkit.io/eventTickets/venue',
       callType: ApiCallType.POST,
       headers: {
-        'Authorization': 'pm.enviornment.jwt',
+        'Authorization': '${jwt}',
         'Content-Type': 'application/json',
       },
       params: {},
@@ -74,6 +61,41 @@ class EventTicketsticketredeemCall {
         'ContentType': 'application/json',
       },
       params: {},
+      body: body,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+    );
+  }
+}
+
+class CreateVenueCall {
+  static Future<ApiCallResponse> call({
+    String? jwt = '',
+    String? pkApiSecret = '',
+    String? pkApiKey = '',
+  }) {
+    final body = '''
+
+{
+
+"name": "DEMOMAN",
+
+"address": "1737 Grafton St, Halifax, NS B3J 2C6, Cansada",
+"timezone": "UTC"
+
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'CreateVenue',
+      apiUrl: 'https://api.pub1.passkit.io/eventTickets/venue',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'Content-Type',
+        'Authorization': '${jwt}',
+      },
+      params: {
+        'PK_API_SECRET': pkApiSecret,
+        'PK_API_KEY': pkApiKey,
+      },
       body: body,
       bodyType: BodyType.JSON,
       returnBody: true,

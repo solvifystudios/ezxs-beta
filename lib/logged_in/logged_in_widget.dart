@@ -108,11 +108,14 @@ class _LoggedInWidgetState extends State<LoggedInWidget>
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/EZXSLOGODEMOPURPLE.png',
-              width: 140,
-              height: 140,
-              fit: BoxFit.fitHeight,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.asset(
+                'assets/images/AP_-_JPEG.png',
+                width: 140,
+                height: 140,
+                fit: BoxFit.fitHeight,
+              ),
             ).animated([animationsMap['imageOnPageLoadAnimation']!]),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),

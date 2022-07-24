@@ -103,7 +103,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPage = 'Home';
+  String _currentPage = 'dashboardGlobal';
 
   @override
   void initState() {
@@ -114,10 +114,10 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'Home': HomeWidget(),
+      'dashboardGlobal': DashboardGlobalWidget(),
       'PassesMenu': PassesMenuWidget(),
+      'AllChats': AllChatsWidget(),
       'Tonight': TonightWidget(),
-      'Profile': ProfileWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
@@ -126,7 +126,7 @@ class _NavBarPageState extends State<NavBarPage> {
         currentIndex: currentIndex,
         onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
         backgroundColor: Color(0xBF000000),
-        selectedItemColor: FlutterFlowTheme.of(context).gray200,
+        selectedItemColor: Color(0xFFD1BB87),
         unselectedItemColor: FlutterFlowTheme.of(context).grayIcon,
         showSelectedLabels: false,
         showUnselectedLabels: false,
@@ -134,12 +134,8 @@ class _NavBarPageState extends State<NavBarPage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.home_filled,
+              Icons.home_rounded,
               size: 24,
-            ),
-            activeIcon: Icon(
-              FFIcons.khome,
-              size: 30,
             ),
             label: '',
             tooltip: '',
@@ -152,6 +148,18 @@ class _NavBarPageState extends State<NavBarPage> {
             activeIcon: Icon(
               FFIcons.kticket,
               size: 30,
+            ),
+            label: '',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.chat_bubble,
+              size: 24,
+            ),
+            activeIcon: Icon(
+              Icons.chat_bubble_rounded,
+              size: 24,
             ),
             label: '',
             tooltip: '',
@@ -163,18 +171,6 @@ class _NavBarPageState extends State<NavBarPage> {
             ),
             activeIcon: Icon(
               Icons.people,
-              size: 30,
-            ),
-            label: '',
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_circle_outlined,
-              size: 24,
-            ),
-            activeIcon: Icon(
-              Icons.account_circle_rounded,
               size: 30,
             ),
             label: '',

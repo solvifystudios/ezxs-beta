@@ -1,3 +1,4 @@
+import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -63,22 +64,11 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        automaticallyImplyLeading: false,
-        leading: Container(
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
-          ),
-        ),
-        title: Text(
-          'EZXS Dashboard',
-          style: FlutterFlowTheme.of(context).title1,
-        ),
+        backgroundColor: Color(0xFFD1BB87),
+        automaticallyImplyLeading: true,
         actions: [],
         centerTitle: true,
-        elevation: 1,
+        elevation: 4,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
@@ -104,6 +94,196 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           FFIcons.kqrcode,
           color: Colors.black,
           size: 24,
+        ),
+      ),
+      drawer: Container(
+        width: 300,
+        child: Drawer(
+          elevation: 16,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    InkWell(
+                      onTap: () async {
+                        if (scaffoldKey.currentState!.isDrawerOpen ||
+                            scaffoldKey.currentState!.isEndDrawerOpen) {
+                          Navigator.pop(context);
+                        }
+                      },
+                      child: Icon(
+                        Icons.arrow_back_sharp,
+                        color: Colors.black,
+                        size: 24,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 75,
+                      height: 75,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                      ),
+                      child: Image.network(
+                        'https://picsum.photos/seed/121/600',
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Hello World',
+                      style: FlutterFlowTheme.of(context).title3,
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Hello World',
+                    style: FlutterFlowTheme.of(context).bodyText1,
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Hello World',
+                      style: FlutterFlowTheme.of(context).bodyText1,
+                    ),
+                  ],
+                ),
+              ),
+              ListView(
+                padding: EdgeInsets.zero,
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                children: [
+                  ListTile(
+                    leading: Icon(
+                      Icons.account_circle_sharp,
+                      color: Color(0xFFD1BB87),
+                      size: 30,
+                    ),
+                    title: Text(
+                      'Profile',
+                      style: FlutterFlowTheme.of(context).title3,
+                    ),
+                    subtitle: Text(
+                      'Edit Profile',
+                      style: FlutterFlowTheme.of(context).subtitle2,
+                    ),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color(0xFF303030),
+                      size: 20,
+                    ),
+                    tileColor: Color(0xFFF5F5F5),
+                    dense: false,
+                  ),
+                  ListTile(
+                    leading: Icon(
+                      Icons.account_circle_sharp,
+                      color: Color(0xFFD1BB87),
+                      size: 30,
+                    ),
+                    title: Text(
+                      'Profile',
+                      style: FlutterFlowTheme.of(context).title3,
+                    ),
+                    subtitle: Text(
+                      'Edit Profile',
+                      style: FlutterFlowTheme.of(context).subtitle2,
+                    ),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color(0xFF303030),
+                      size: 20,
+                    ),
+                    tileColor: Color(0xFFF5F5F5),
+                    dense: false,
+                  ),
+                  ListTile(
+                    leading: Icon(
+                      Icons.account_circle_sharp,
+                      color: Color(0xFFD1BB87),
+                      size: 30,
+                    ),
+                    title: Text(
+                      'Profile',
+                      style: FlutterFlowTheme.of(context).title3,
+                    ),
+                    subtitle: Text(
+                      'Edit Profile',
+                      style: FlutterFlowTheme.of(context).subtitle2,
+                    ),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Color(0xFF303030),
+                      size: 20,
+                    ),
+                    tileColor: Color(0xFFF5F5F5),
+                    dense: false,
+                  ),
+                  InkWell(
+                    onTap: () async {
+                      GoRouter.of(context).prepareAuthEvent();
+                      await signOut();
+                      context.goNamedAuth('Login', mounted);
+                    },
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.logout,
+                        color: Color(0xFFD1BB87),
+                        size: 30,
+                      ),
+                      title: Text(
+                        'Logout',
+                        style: FlutterFlowTheme.of(context).title3,
+                      ),
+                      subtitle: Text(
+                        'Close Session',
+                        style: FlutterFlowTheme.of(context).subtitle2,
+                      ),
+                      trailing: Icon(
+                        Icons.arrow_forward_ios,
+                        color: Color(0xFF303030),
+                        size: 20,
+                      ),
+                      tileColor: Color(0xFFF5F5F5),
+                      dense: false,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
       body: SafeArea(

@@ -19,7 +19,7 @@ class FFAppState {
 
   late SharedPreferences prefs;
 
-  String _Authorization = '';
+  String _Authorization = '[[jwt]]';
   String get Authorization => _Authorization;
   set Authorization(String _value) {
     _Authorization = _value;

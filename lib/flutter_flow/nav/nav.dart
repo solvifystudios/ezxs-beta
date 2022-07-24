@@ -76,26 +76,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? NavBarPage() : LoginWidget(),
           routes: [
             FFRoute(
-              name: 'Login',
-              path: 'login',
-              builder: (context, params) => LoginWidget(),
-            ),
-            FFRoute(
-              name: 'LoggedIn',
-              path: 'loggedIn',
-              builder: (context, params) => LoggedInWidget(),
-            ),
-            FFRoute(
-              name: 'Production',
-              path: 'production',
-              builder: (context, params) => ProductionWidget(),
-            ),
-            FFRoute(
-              name: 'Home',
-              path: 'home',
+              name: 'dashboardGlobal',
+              path: 'dashboardGlobal',
               builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'Home')
-                  : HomeWidget(),
+                  ? NavBarPage(initialPage: 'dashboardGlobal')
+                  : DashboardGlobalWidget(),
             ),
             FFRoute(
               name: 'Venue',
@@ -103,9 +88,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => VenueWidget(),
             ),
             FFRoute(
-              name: 'EditEvent',
-              path: 'editEvent',
-              builder: (context, params) => EditEventWidget(),
+              name: 'Production',
+              path: 'production',
+              builder: (context, params) => ProductionWidget(),
             ),
             FFRoute(
               name: 'PassesMenu',
@@ -115,9 +100,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : PassesMenuWidget(),
             ),
             FFRoute(
-              name: 'Users',
-              path: 'users',
-              builder: (context, params) => UsersWidget(),
+              name: 'Home',
+              path: 'home',
+              builder: (context, params) => HomeWidget(),
             ),
             FFRoute(
               name: 'Tonight',
@@ -129,29 +114,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'Profile',
               path: 'profile',
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'Profile')
-                  : ProfileWidget(),
+              builder: (context, params) => ProfileWidget(),
+            ),
+            FFRoute(
+              name: 'ProfileSettings',
+              path: 'profileSettings',
+              builder: (context, params) => ProfileSettingsWidget(),
             ),
             FFRoute(
               name: 'ProfileSetting',
               path: 'profileSetting',
               builder: (context, params) => ProfileSettingWidget(),
-            ),
-            FFRoute(
-              name: 'EventDetails',
-              path: 'eventDetails',
-              builder: (context, params) => EventDetailsWidget(),
-            ),
-            FFRoute(
-              name: 'BarCodeScanner',
-              path: 'barCodeScanner',
-              builder: (context, params) => BarCodeScannerWidget(),
-            ),
-            FFRoute(
-              name: 'scanner',
-              path: 'scanner',
-              builder: (context, params) => ScannerWidget(),
             ),
             FFRoute(
               name: 'GetPass',
@@ -169,6 +142,205 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => TicketScannedWidget(
                 redeemTicket: params.getParam('redeemTicket', ParamType.String),
               ),
+            ),
+            FFRoute(
+              name: 'ScannedHistory',
+              path: 'scannedHistory',
+              builder: (context, params) => ScannedHistoryWidget(),
+            ),
+            FFRoute(
+              name: 'OnboardFlow',
+              path: 'onboardFlow',
+              builder: (context, params) => OnboardFlowWidget(),
+            ),
+            FFRoute(
+              name: 'Login',
+              path: 'login',
+              builder: (context, params) => LoginWidget(),
+            ),
+            FFRoute(
+              name: 'scanner',
+              path: 'scanner',
+              builder: (context, params) => ScannerWidget(),
+            ),
+            FFRoute(
+              name: 'PasswordReset',
+              path: 'passwordReset',
+              builder: (context, params) => PasswordResetWidget(),
+            ),
+            FFRoute(
+              name: 'BarCodeScanner',
+              path: 'barCodeScanner',
+              builder: (context, params) => BarCodeScannerWidget(),
+            ),
+            FFRoute(
+              name: 'LoginCopy',
+              path: 'loginCopy',
+              builder: (context, params) => LoginCopyWidget(),
+            ),
+            FFRoute(
+              name: 'LoggedIn',
+              path: 'loggedIn',
+              builder: (context, params) => LoggedInWidget(),
+            ),
+            FFRoute(
+              name: 'UserSearch',
+              path: 'userSearch',
+              builder: (context, params) => UserSearchWidget(),
+            ),
+            FFRoute(
+              name: 'OnboardStyle',
+              path: 'onboardStyle',
+              builder: (context, params) => OnboardStyleWidget(),
+            ),
+            FFRoute(
+              name: 'UserSearch2',
+              path: 'userSearch2',
+              builder: (context, params) => UserSearch2Widget(),
+            ),
+            FFRoute(
+              name: 'Users',
+              path: 'users',
+              builder: (context, params) => UsersWidget(),
+            ),
+            FFRoute(
+              name: 'UserBase',
+              path: 'userBase',
+              builder: (context, params) => UserBaseWidget(),
+            ),
+            FFRoute(
+              name: 'UserScanInfo',
+              path: 'userScanInfo',
+              builder: (context, params) => UserScanInfoWidget(),
+            ),
+            FFRoute(
+              name: 'Venues',
+              path: 'venues',
+              builder: (context, params) => VenuesWidget(),
+            ),
+            FFRoute(
+              name: 'ClientFeedback',
+              path: 'clientFeedback',
+              builder: (context, params) => ClientFeedbackWidget(),
+            ),
+            FFRoute(
+              name: 'MembershipType',
+              path: 'membershipType',
+              builder: (context, params) => MembershipTypeWidget(),
+            ),
+            FFRoute(
+              name: 'EventEditConfirm',
+              path: 'eventEditConfirm',
+              builder: (context, params) => EventEditConfirmWidget(),
+            ),
+            FFRoute(
+              name: 'AdminUserOnboard',
+              path: 'adminUserOnboard',
+              builder: (context, params) => AdminUserOnboardWidget(),
+            ),
+            FFRoute(
+              name: 'EventEditGlobal',
+              path: 'eventEditGlobal',
+              builder: (context, params) => EventEditGlobalWidget(),
+            ),
+            FFRoute(
+              name: 'EventAnalytic',
+              path: 'eventAnalytic',
+              builder: (context, params) => EventAnalyticWidget(),
+            ),
+            FFRoute(
+              name: 'EventsConcept',
+              path: 'eventsConcept',
+              builder: (context, params) => EventsConceptWidget(),
+            ),
+            FFRoute(
+              name: 'EditEvent',
+              path: 'editEvent',
+              builder: (context, params) => EditEventWidget(),
+            ),
+            FFRoute(
+              name: 'AdminSidePanel',
+              path: 'adminSidePanel',
+              builder: (context, params) => AdminSidePanelWidget(),
+            ),
+            FFRoute(
+              name: 'NewEventPreview',
+              path: 'newEventPreview',
+              builder: (context, params) => NewEventPreviewWidget(),
+            ),
+            FFRoute(
+              name: 'EventEdit2',
+              path: 'eventEdit2',
+              builder: (context, params) => EventEdit2Widget(),
+            ),
+            FFRoute(
+              name: 'EventsCalendar',
+              path: 'eventsCalendar',
+              builder: (context, params) => EventsCalendarWidget(),
+            ),
+            FFRoute(
+              name: 'EventDetails',
+              path: 'eventDetails',
+              builder: (context, params) => EventDetailsWidget(),
+            ),
+            FFRoute(
+              name: 'ProductionAnalytic',
+              path: 'productionAnalytic',
+              builder: (context, params) => ProductionAnalyticWidget(),
+            ),
+            FFRoute(
+              name: 'TicketHistory2',
+              path: 'ticketHistory2',
+              builder: (context, params) => TicketHistory2Widget(),
+            ),
+            FFRoute(
+              name: 'MembershipType2',
+              path: 'membershipType2',
+              builder: (context, params) => MembershipType2Widget(),
+            ),
+            FFRoute(
+              name: 'EditUserTicket',
+              path: 'editUserTicket',
+              builder: (context, params) => EditUserTicketWidget(),
+            ),
+            FFRoute(
+              name: 'ChatPage',
+              path: 'chatPage',
+              asyncParams: {
+                'chatUser': getDoc('users', UsersRecord.serializer),
+              },
+              builder: (context, params) => ChatPageWidget(
+                chatUser: params.getParam('chatUser', ParamType.Document),
+                chatRef: params.getParam(
+                    'chatRef', ParamType.DocumentReference, 'chats'),
+              ),
+            ),
+            FFRoute(
+              name: 'Appbar',
+              path: 'appbar',
+              builder: (context, params) => AppbarWidget(),
+            ),
+            FFRoute(
+              name: 'inviteuser',
+              path: 'inviteuser',
+              asyncParams: {
+                'chat': getDoc('chats', ChatsRecord.serializer),
+              },
+              builder: (context, params) => InviteuserWidget(
+                chat: params.getParam('chat', ParamType.Document),
+              ),
+            ),
+            FFRoute(
+              name: 'appn',
+              path: 'appn',
+              builder: (context, params) => AppnWidget(),
+            ),
+            FFRoute(
+              name: 'AllChats',
+              path: 'allChats',
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'AllChats')
+                  : AllChatsWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),
@@ -341,7 +513,8 @@ class FFRoute {
                       builder: (context) => Image.asset(
                         'assets/images/Artboard_1.png',
                         width: double.infinity,
-                        fit: BoxFit.fill,
+                        height: double.infinity,
+                        fit: BoxFit.fitHeight,
                       ),
                     ),
                   ),

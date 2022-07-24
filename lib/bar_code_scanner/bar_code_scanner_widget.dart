@@ -2,7 +2,6 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,7 +14,6 @@ class BarCodeScannerWidget extends StatefulWidget {
 
 class _BarCodeScannerWidgetState extends State<BarCodeScannerWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  var qrValue = '';
 
   @override
   Widget build(BuildContext context) {
@@ -56,10 +54,7 @@ class _BarCodeScannerWidgetState extends State<BarCodeScannerWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
                 child: Text(
-                  valueOrDefault<String>(
-                    qrValue!,
-                    'Not Scanned Yet',
-                  ),
+                  'RESULT',
                   style: FlutterFlowTheme.of(context).bodyText1.override(
                         fontFamily:
                             FlutterFlowTheme.of(context).bodyText1Family,
@@ -68,15 +63,8 @@ class _BarCodeScannerWidgetState extends State<BarCodeScannerWidget> {
                 ),
               ),
               FFButtonWidget(
-                onPressed: () async {
-                  qrValue = await FlutterBarcodeScanner.scanBarcode(
-                    '#C62828', // scanning line color
-                    'Cancel', // cancel button text
-                    true, // whether to show the flash icon
-                    ScanMode.BARCODE,
-                  );
-
-                  setState(() {});
+                onPressed: () {
+                  print('Button pressed ...');
                 },
                 text: 'SCAN PASS',
                 options: FFButtonOptions(

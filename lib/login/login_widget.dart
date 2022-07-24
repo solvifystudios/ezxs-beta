@@ -155,14 +155,14 @@ class _LoginWidgetState extends State<LoginWidget>
                                 ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Color(0xFFDBE2E7),
+                            color: Color(0x63000000),
                             width: 2,
                           ),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Color(0xFFDBE2E7),
+                            color: Color(0x63000000),
                             width: 2,
                           ),
                           borderRadius: BorderRadius.circular(8),
@@ -202,14 +202,14 @@ class _LoginWidgetState extends State<LoginWidget>
                                 ),
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Color(0xFFDBE2E7),
+                            color: Color(0x63000000),
                             width: 2,
                           ),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Color(0xFFDBE2E7),
+                            color: Color(0x63000000),
                             width: 2,
                           ),
                           borderRadius: BorderRadius.circular(8),
@@ -247,8 +247,13 @@ class _LoginWidgetState extends State<LoginWidget>
               padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  Text(
+                    'Forgot your Password?',
+                    textAlign: TextAlign.start,
+                    style: FlutterFlowTheme.of(context).bodyText1,
+                  ),
                   FFButtonWidget(
                     onPressed: () async {
                       GoRouter.of(context).prepareAuthEvent();
@@ -262,7 +267,7 @@ class _LoginWidgetState extends State<LoginWidget>
                         return;
                       }
 
-                      context.goNamedAuth('Home', mounted);
+                      context.goNamedAuth('dashboardGlobal', mounted);
                     },
                     text: 'Login',
                     options: FFButtonOptions(
@@ -299,7 +304,7 @@ class _LoginWidgetState extends State<LoginWidget>
                       if (user == null) {
                         return;
                       }
-                      context.goNamedAuth('Home', mounted);
+                      context.goNamedAuth('dashboardGlobal', mounted);
                     },
                     text: 'Continue as Guest',
                     options: FFButtonOptions(

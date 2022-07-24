@@ -66,9 +66,9 @@ class _TicketScannedWidgetState extends State<TicketScannedWidget> {
                   style: FlutterFlowTheme.of(context).subtitle2.override(
                         fontFamily:
                             FlutterFlowTheme.of(context).subtitle2Family,
-                        color: FlutterFlowTheme.of(context).primaryBtnText,
+                        color: FlutterFlowTheme.of(context).lineColor,
                         fontSize: 20,
-                        fontWeight: FontWeight.w300,
+                        fontWeight: FontWeight.normal,
                       ),
                 ),
               ),
