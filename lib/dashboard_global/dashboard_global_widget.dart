@@ -328,7 +328,11 @@ class _DashboardGlobalWidgetState extends State<DashboardGlobalWidget> {
                             size: 24,
                           ),
                         ),
-                        style: FlutterFlowTheme.of(context).bodyText1,
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyText1Family,
+                              fontSize: 16,
+                            ),
                       ),
                     ),
                   ),
@@ -645,7 +649,7 @@ class _DashboardGlobalWidgetState extends State<DashboardGlobalWidget> {
                 scrollDirection: Axis.vertical,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(16, 8, 16, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 8, 16, 10),
                     child: Container(
                       width: double.infinity,
                       height: 200,
