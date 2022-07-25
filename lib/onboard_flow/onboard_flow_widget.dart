@@ -7,14 +7,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardFlowWidget extends StatefulWidget {
-  const OnboardFlowWidget({Key? key}) : super(key: key);
+  const OnboardFlowWidget({Key key}) : super(key: key);
 
   @override
   _OnboardFlowWidgetState createState() => _OnboardFlowWidgetState();
 }
 
 class _OnboardFlowWidgetState extends State<OnboardFlowWidget> {
-  PageController? pageViewController;
+  PageController pageViewController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -245,7 +245,7 @@ class _OnboardFlowWidgetState extends State<OnboardFlowWidget> {
                             count: 3,
                             axisDirection: Axis.horizontal,
                             onDotClicked: (i) {
-                              pageViewController!.animateToPage(
+                              pageViewController.animateToPage(
                                 i,
                                 duration: Duration(milliseconds: 500),
                                 curve: Curves.ease,

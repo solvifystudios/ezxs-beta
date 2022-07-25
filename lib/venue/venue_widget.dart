@@ -7,7 +7,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class VenueWidget extends StatefulWidget {
-  const VenueWidget({Key? key}) : super(key: key);
+  const VenueWidget({Key key}) : super(key: key);
 
   @override
   _VenueWidgetState createState() => _VenueWidgetState();

@@ -7,7 +7,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class UserBaseWidget extends StatefulWidget {
-  const UserBaseWidget({Key? key}) : super(key: key);
+  const UserBaseWidget({Key key}) : super(key: key);
 
   @override
   _UserBaseWidgetState createState() => _UserBaseWidgetState();
@@ -15,7 +15,7 @@ class UserBaseWidget extends StatefulWidget {
 
 class _UserBaseWidgetState extends State<UserBaseWidget>
     with TickerProviderStateMixin {
-  TextEditingController? textController;
+  TextEditingController textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final animationsMap = {
     'textFieldOnPageLoadAnimation': AnimationInfo(
@@ -261,7 +261,7 @@ class _UserBaseWidgetState extends State<UserBaseWidget>
                                           .bodyText1,
                                     ).animated([
                                       animationsMap[
-                                          'textFieldOnPageLoadAnimation']!
+                                          'textFieldOnPageLoadAnimation']
                                     ]),
                                   ),
                                 ],
@@ -281,7 +281,7 @@ class _UserBaseWidgetState extends State<UserBaseWidget>
                                           .primaryBtnText,
                                     ),
                               ).animated(
-                                  [animationsMap['textOnPageLoadAnimation1']!]),
+                                  [animationsMap['textOnPageLoadAnimation1']]),
                             ),
                             Padding(
                               padding:
@@ -326,7 +326,7 @@ class _UserBaseWidgetState extends State<UserBaseWidget>
                                                 .title2,
                                           ).animated([
                                             animationsMap[
-                                                'textOnPageLoadAnimation2']!
+                                                'textOnPageLoadAnimation2']
                                           ]),
                                         ),
                                         Padding(
@@ -339,7 +339,7 @@ class _UserBaseWidgetState extends State<UserBaseWidget>
                                                 .bodyText2,
                                           ).animated([
                                             animationsMap[
-                                                'textOnPageLoadAnimation3']!
+                                                'textOnPageLoadAnimation3']
                                           ]),
                                         ),
                                         Padding(
@@ -531,7 +531,7 @@ class _UserBaseWidgetState extends State<UserBaseWidget>
                                                     ),
                                                   ).animated([
                                                     animationsMap[
-                                                        'containerOnPageLoadAnimation1']!
+                                                        'containerOnPageLoadAnimation1']
                                                   ]),
                                                 ),
                                                 Padding(
@@ -705,7 +705,7 @@ class _UserBaseWidgetState extends State<UserBaseWidget>
                                                     ),
                                                   ).animated([
                                                     animationsMap[
-                                                        'containerOnPageLoadAnimation2']!
+                                                        'containerOnPageLoadAnimation2']
                                                   ]),
                                                 ),
                                               ],
@@ -722,7 +722,7 @@ class _UserBaseWidgetState extends State<UserBaseWidget>
                                                 .title2,
                                           ).animated([
                                             animationsMap[
-                                                'textOnPageLoadAnimation4']!
+                                                'textOnPageLoadAnimation4']
                                           ]),
                                         ),
                                         Padding(
@@ -735,7 +735,7 @@ class _UserBaseWidgetState extends State<UserBaseWidget>
                                                 .bodyText2,
                                           ).animated([
                                             animationsMap[
-                                                'textOnPageLoadAnimation5']!
+                                                'textOnPageLoadAnimation5']
                                           ]),
                                         ),
                                         Padding(
@@ -1094,7 +1094,7 @@ class _UserBaseWidgetState extends State<UserBaseWidget>
                                             ],
                                           ).animated([
                                             animationsMap[
-                                                'listViewOnPageLoadAnimation']!
+                                                'listViewOnPageLoadAnimation']
                                           ]),
                                         ),
                                       ],

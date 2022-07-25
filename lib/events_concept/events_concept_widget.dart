@@ -8,7 +8,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class EventsConceptWidget extends StatefulWidget {
-  const EventsConceptWidget({Key? key}) : super(key: key);
+  const EventsConceptWidget({Key key}) : super(key: key);
 
   @override
   _EventsConceptWidgetState createState() => _EventsConceptWidgetState();
@@ -247,7 +247,7 @@ class _EventsConceptWidgetState extends State<EventsConceptWidget>
                                             color: Colors.white,
                                           ),
                                     ).animated([
-                                      animationsMap['textOnPageLoadAnimation1']!
+                                      animationsMap['textOnPageLoadAnimation1']
                                     ]),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -264,7 +264,7 @@ class _EventsConceptWidgetState extends State<EventsConceptWidget>
                                             ),
                                       ).animated([
                                         animationsMap[
-                                            'textOnPageLoadAnimation2']!
+                                            'textOnPageLoadAnimation2']
                                       ]),
                                     ),
                                     Padding(
@@ -282,7 +282,7 @@ class _EventsConceptWidgetState extends State<EventsConceptWidget>
                                             ),
                                       ).animated([
                                         animationsMap[
-                                            'textOnPageLoadAnimation3']!
+                                            'textOnPageLoadAnimation3']
                                       ]),
                                     ),
                                     Padding(
@@ -328,14 +328,14 @@ class _EventsConceptWidgetState extends State<EventsConceptWidget>
                                 ),
                               ),
                             ).animated([
-                              animationsMap['containerOnPageLoadAnimation2']!
+                              animationsMap['containerOnPageLoadAnimation2']
                             ]),
                           ),
                         ),
                       ],
                     ),
                   ),
-                ).animated([animationsMap['containerOnPageLoadAnimation1']!]),
+                ).animated([animationsMap['containerOnPageLoadAnimation1']]),
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 44),
@@ -396,7 +396,7 @@ class _EventsConceptWidgetState extends State<EventsConceptWidget>
                                             color: Colors.white,
                                           ),
                                     ).animated([
-                                      animationsMap['textOnPageLoadAnimation4']!
+                                      animationsMap['textOnPageLoadAnimation4']
                                     ]),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -471,14 +471,14 @@ class _EventsConceptWidgetState extends State<EventsConceptWidget>
                                 ),
                               ),
                             ).animated([
-                              animationsMap['containerOnPageLoadAnimation4']!
+                              animationsMap['containerOnPageLoadAnimation4']
                             ]),
                           ),
                         ),
                       ],
                     ),
                   ),
-                ).animated([animationsMap['containerOnPageLoadAnimation3']!]),
+                ).animated([animationsMap['containerOnPageLoadAnimation3']]),
               ),
             ],
           ),

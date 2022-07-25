@@ -8,14 +8,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DashboardGlobalWidget extends StatefulWidget {
-  const DashboardGlobalWidget({Key? key}) : super(key: key);
+  const DashboardGlobalWidget({Key key}) : super(key: key);
 
   @override
   _DashboardGlobalWidgetState createState() => _DashboardGlobalWidgetState();
 }
 
 class _DashboardGlobalWidgetState extends State<DashboardGlobalWidget> {
-  TextEditingController? searchFieldController;
+  TextEditingController searchFieldController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -74,8 +74,8 @@ class _DashboardGlobalWidgetState extends State<DashboardGlobalWidget> {
                   children: [
                     InkWell(
                       onTap: () async {
-                        if (scaffoldKey.currentState!.isDrawerOpen ||
-                            scaffoldKey.currentState!.isEndDrawerOpen) {
+                        if (scaffoldKey.currentState.isDrawerOpen ||
+                            scaffoldKey.currentState.isEndDrawerOpen) {
                           Navigator.pop(context);
                         }
                       },

@@ -9,14 +9,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class UsersWidget extends StatefulWidget {
-  const UsersWidget({Key? key}) : super(key: key);
+  const UsersWidget({Key key}) : super(key: key);
 
   @override
   _UsersWidgetState createState() => _UsersWidgetState();
 }
 
 class _UsersWidgetState extends State<UsersWidget> {
-  TextEditingController? textController;
+  TextEditingController textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

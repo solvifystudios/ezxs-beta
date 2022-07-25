@@ -6,14 +6,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class UserSearchWidget extends StatefulWidget {
-  const UserSearchWidget({Key? key}) : super(key: key);
+  const UserSearchWidget({Key key}) : super(key: key);
 
   @override
   _UserSearchWidgetState createState() => _UserSearchWidgetState();
 }
 
 class _UserSearchWidgetState extends State<UserSearchWidget> {
-  TextEditingController? searchBarController;
+  TextEditingController searchBarController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

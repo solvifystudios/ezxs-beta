@@ -8,7 +8,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginCopyWidget extends StatefulWidget {
-  const LoginCopyWidget({Key? key}) : super(key: key);
+  const LoginCopyWidget({Key key}) : super(key: key);
 
   @override
   _LoginCopyWidgetState createState() => _LoginCopyWidgetState();
@@ -16,9 +16,9 @@ class LoginCopyWidget extends StatefulWidget {
 
 class _LoginCopyWidgetState extends State<LoginCopyWidget>
     with TickerProviderStateMixin {
-  TextEditingController? emailAddressController;
-  TextEditingController? passwordController;
-  late bool passwordVisibility;
+  TextEditingController emailAddressController;
+  TextEditingController passwordController;
+  bool passwordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final animationsMap = {
     'imageOnPageLoadAnimation': AnimationInfo(
@@ -79,7 +79,7 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget>
                           height: 75,
                           fit: BoxFit.fitWidth,
                         ),
-                      ).animated([animationsMap['imageOnPageLoadAnimation']!]),
+                      ).animated([animationsMap['imageOnPageLoadAnimation']]),
                     ],
                   ),
                   Padding(
@@ -255,8 +255,8 @@ class _LoginCopyWidgetState extends State<LoginCopyWidget>
 
                       final user = await signInWithEmail(
                         context,
-                        emailAddressController!.text,
-                        passwordController!.text,
+                        emailAddressController.text,
+                        passwordController.text,
                       );
                       if (user == null) {
                         return;

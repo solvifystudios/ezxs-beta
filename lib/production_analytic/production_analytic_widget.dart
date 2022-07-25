@@ -8,7 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class ProductionAnalyticWidget extends StatefulWidget {
-  const ProductionAnalyticWidget({Key? key}) : super(key: key);
+  const ProductionAnalyticWidget({Key key}) : super(key: key);
 
   @override
   _ProductionAnalyticWidgetState createState() =>
@@ -85,7 +85,7 @@ class _ProductionAnalyticWidgetState extends State<ProductionAnalyticWidget>
                 width: MediaQuery.of(context).size.width,
                 height: 240,
                 fit: BoxFit.cover,
-              ).animated([animationsMap['imageOnPageLoadAnimation']!]),
+              ).animated([animationsMap['imageOnPageLoadAnimation']]),
               LinearPercentIndicator(
                 percent: 0.4,
                 width: MediaQuery.of(context).size.width * 0.9,

@@ -9,14 +9,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class EventsCalendarWidget extends StatefulWidget {
-  const EventsCalendarWidget({Key? key}) : super(key: key);
+  const EventsCalendarWidget({Key key}) : super(key: key);
 
   @override
   _EventsCalendarWidgetState createState() => _EventsCalendarWidgetState();
 }
 
 class _EventsCalendarWidgetState extends State<EventsCalendarWidget> {
-  DateTimeRange? calendarSelectedDay;
+  DateTimeRange calendarSelectedDay;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -84,7 +84,7 @@ class _EventsCalendarWidgetState extends State<EventsCalendarWidget> {
                   weekFormat: true,
                   weekStartsMonday: true,
                   initialDate: random_data.randomDate(),
-                  onChange: (DateTimeRange? newSelectedDate) {
+                  onChange: (DateTimeRange newSelectedDate) {
                     setState(() => calendarSelectedDay = newSelectedDate);
                   },
                   titleStyle: FlutterFlowTheme.of(context).subtitle1,

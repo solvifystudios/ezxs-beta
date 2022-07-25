@@ -7,16 +7,16 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProfileSettingsWidget extends StatefulWidget {
-  const ProfileSettingsWidget({Key? key}) : super(key: key);
+  const ProfileSettingsWidget({Key key}) : super(key: key);
 
   @override
   _ProfileSettingsWidgetState createState() => _ProfileSettingsWidgetState();
 }
 
 class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
-  bool? switchListTileValue1;
-  bool? switchListTileValue2;
-  bool? switchListTileValue3;
+  bool switchListTileValue1;
+  bool switchListTileValue2;
+  bool switchListTileValue3;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

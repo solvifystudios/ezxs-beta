@@ -6,7 +6,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TonightWidget extends StatefulWidget {
-  const TonightWidget({Key? key}) : super(key: key);
+  const TonightWidget({Key key}) : super(key: key);
 
   @override
   _TonightWidgetState createState() => _TonightWidgetState();

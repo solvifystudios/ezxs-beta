@@ -9,14 +9,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PasswordResetWidget extends StatefulWidget {
-  const PasswordResetWidget({Key? key}) : super(key: key);
+  const PasswordResetWidget({Key key}) : super(key: key);
 
   @override
   _PasswordResetWidgetState createState() => _PasswordResetWidgetState();
 }
 
 class _PasswordResetWidgetState extends State<PasswordResetWidget> {
-  TextEditingController? emailAddressController;
+  TextEditingController emailAddressController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -181,7 +181,7 @@ class _PasswordResetWidgetState extends State<PasswordResetWidget> {
                           FlutterFlowTheme.of(context).secondaryBackground,
                       contentPadding:
                           EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
-                      suffixIcon: emailAddressController!.text.isNotEmpty
+                      suffixIcon: emailAddressController.text.isNotEmpty
                           ? InkWell(
                               onTap: () => setState(
                                 () => emailAddressController?.clear(),
@@ -206,7 +206,7 @@ class _PasswordResetWidgetState extends State<PasswordResetWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    if (emailAddressController!.text.isEmpty) {
+                    if (emailAddressController.text.isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
@@ -217,7 +217,7 @@ class _PasswordResetWidgetState extends State<PasswordResetWidget> {
                       return;
                     }
                     await resetPassword(
-                      email: emailAddressController!.text,
+                      email: emailAddressController.text,
                       context: context,
                     );
                   },

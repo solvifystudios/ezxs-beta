@@ -10,26 +10,26 @@ import 'package:google_fonts/google_fonts.dart';
 
 class InviteuserWidget extends StatefulWidget {
   const InviteuserWidget({
-    Key? key,
+    Key key,
     this.chat,
   }) : super(key: key);
 
-  final ChatsRecord? chat;
+  final ChatsRecord chat;
 
   @override
   _InviteuserWidgetState createState() => _InviteuserWidgetState();
 }
 
 class _InviteuserWidgetState extends State<InviteuserWidget> {
-  Map<UsersRecord?, bool> checkboxListTileValueMap = {};
-  List<UsersRecord?> get checkboxListTileCheckedItems =>
+  Map<UsersRecord, bool> checkboxListTileValueMap = {};
+  List<UsersRecord> get checkboxListTileCheckedItems =>
       checkboxListTileValueMap.entries
           .where((e) => e.value)
           .map((e) => e.key)
           .toList();
 
-  TextEditingController? textController;
-  ChatsRecord? groupChat;
+  TextEditingController textController;
+  ChatsRecord groupChat;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -169,7 +169,7 @@ class _InviteuserWidgetState extends State<InviteuserWidget> {
                     ),
                   );
                 }
-                List<UsersRecord> listViewUsersRecordList = snapshot.data!;
+                List<UsersRecord> listViewUsersRecordList = snapshot.data;
                 return ListView.builder(
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
@@ -216,7 +216,7 @@ class _InviteuserWidgetState extends State<InviteuserWidget> {
                                       shape: BoxShape.circle,
                                     ),
                                     child: Image.network(
-                                      listViewUsersRecord!.photoUrl!,
+                                      listViewUsersRecord.photoUrl,
                                     ),
                                   ),
                                 ),
@@ -234,9 +234,9 @@ class _InviteuserWidgetState extends State<InviteuserWidget> {
                                           listViewUsersRecord] ??= false,
                                       onChanged: (newValue) => setState(() =>
                                           checkboxListTileValueMap[
-                                              listViewUsersRecord] = newValue!),
+                                              listViewUsersRecord] = newValue),
                                       title: Text(
-                                        listViewUsersRecord!.displayName!,
+                                        listViewUsersRecord.displayName,
                                         style: FlutterFlowTheme.of(context)
                                             .subtitle1
                                             .override(
@@ -247,7 +247,7 @@ class _InviteuserWidgetState extends State<InviteuserWidget> {
                                             ),
                                       ),
                                       subtitle: Text(
-                                        listViewUsersRecord!.displayName!,
+                                        listViewUsersRecord.displayName,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText2
                                             .override(
@@ -300,8 +300,8 @@ class _InviteuserWidgetState extends State<InviteuserWidget> {
               child: FFButtonWidget(
                 onPressed: () async {
                   groupChat = await FFChatManager.instance.addGroupMembers(
-                    widget.chat!,
-                    widget.chat!.users!.toList()!.toList(),
+                    widget.chat,
+                    widget.chat.users.toList(),
                   );
                   context.pop();
 

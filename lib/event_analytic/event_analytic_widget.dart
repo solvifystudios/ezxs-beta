@@ -9,7 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class EventAnalyticWidget extends StatefulWidget {
-  const EventAnalyticWidget({Key? key}) : super(key: key);
+  const EventAnalyticWidget({Key key}) : super(key: key);
 
   @override
   _EventAnalyticWidgetState createState() => _EventAnalyticWidgetState();
@@ -183,7 +183,7 @@ class _EventAnalyticWidgetState extends State<EventAnalyticWidget>
               width: MediaQuery.of(context).size.width,
               height: 200,
               fit: BoxFit.cover,
-            ).animated([animationsMap['imageOnPageLoadAnimation']!]),
+            ).animated([animationsMap['imageOnPageLoadAnimation']]),
             Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -197,7 +197,7 @@ class _EventAnalyticWidgetState extends State<EventAnalyticWidget>
                     fontWeight: FontWeight.w100,
                     fontSize: 92,
                   ),
-                ).animated([animationsMap['textOnPageLoadAnimation']!]),
+                ).animated([animationsMap['textOnPageLoadAnimation']]),
               ],
             ),
             Padding(
@@ -212,7 +212,7 @@ class _EventAnalyticWidgetState extends State<EventAnalyticWidget>
                     style: FlutterFlowTheme.of(context).bodyText2,
                   ),
                 ],
-              ).animated([animationsMap['rowOnPageLoadAnimation1']!]),
+              ).animated([animationsMap['rowOnPageLoadAnimation1']]),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
@@ -226,7 +226,7 @@ class _EventAnalyticWidgetState extends State<EventAnalyticWidget>
                     style: FlutterFlowTheme.of(context).subtitle2,
                   ),
                 ],
-              ).animated([animationsMap['rowOnPageLoadAnimation2']!]),
+              ).animated([animationsMap['rowOnPageLoadAnimation2']]),
             ),
             LinearPercentIndicator(
               percent: 0.4,
@@ -300,7 +300,7 @@ class _EventAnalyticWidgetState extends State<EventAnalyticWidget>
                     ],
                   ),
                 ],
-              ).animated([animationsMap['rowOnPageLoadAnimation3']!]),
+              ).animated([animationsMap['rowOnPageLoadAnimation3']]),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
@@ -374,11 +374,11 @@ class _EventAnalyticWidgetState extends State<EventAnalyticWidget>
                           size: 50,
                         ),
                       ).animated(
-                          [animationsMap['containerOnPageLoadAnimation']!]),
+                          [animationsMap['containerOnPageLoadAnimation']]),
                     ),
                   ],
                 ),
-              ).animated([animationsMap['stackOnPageLoadAnimation']!]),
+              ).animated([animationsMap['stackOnPageLoadAnimation']]),
             ),
           ],
         ),

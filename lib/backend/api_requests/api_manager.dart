@@ -27,12 +27,11 @@ class ApiCallRecord extends Equatable {
   final String apiUrl;
   final Map<String, dynamic> headers;
   final Map<String, dynamic> params;
-  final String? body;
-  final BodyType? bodyType;
+  final String body;
+  final BodyType bodyType;
 
   @override
-  List<Object?> get props =>
-      [callName, apiUrl, headers, params, body, bodyType];
+  List<Object> get props => [callName, apiUrl, headers, params, body, bodyType];
 }
 
 class ApiCallResponse {
@@ -49,12 +48,12 @@ class ApiManager {
   // Cache that will ensure identical calls are not repeatedly made.
   static Map<ApiCallRecord, ApiCallResponse> _apiCache = {};
 
-  static ApiManager? _instance;
+  static ApiManager _instance;
   static ApiManager get instance => _instance ??= ApiManager._();
 
   // If your API calls need authentication, populate this field once
   // the user has authenticated. Alter this as needed.
-  static String? _accessToken;
+  static String _accessToken;
 
   // You may want to call this if, for example, you make a change to the
   // database and no longer want the cached result of a call that may
@@ -102,8 +101,8 @@ class ApiManager {
     String apiUrl,
     Map<String, dynamic> headers,
     Map<String, dynamic> params,
-    String? body,
-    BodyType? bodyType,
+    String body,
+    BodyType bodyType,
     bool returnBody,
   ) async {
     assert(
@@ -115,7 +114,7 @@ class ApiManager {
       ApiCallType.POST: http.post,
       ApiCallType.PUT: http.put,
       ApiCallType.PATCH: http.patch,
-    }[type]!;
+    }[type];
     final response = await requestFn(Uri.parse(apiUrl),
         headers: toStringMap(headers), body: postBody);
     return createResponse(response, returnBody);
@@ -123,13 +122,15 @@ class ApiManager {
 
   static dynamic createBody(
     Map<String, dynamic> headers,
-    Map<String, dynamic>? params,
-    String? body,
-    BodyType? bodyType,
+    Map<String, dynamic> params,
+    String body,
+    BodyType bodyType,
   ) {
-    String? contentType;
+    String contentType;
     dynamic postBody;
     switch (bodyType) {
+      case BodyType.NONE:
+        break;
       case BodyType.JSON:
         contentType = 'application/json';
         postBody = body ?? json.encode(params ?? {});
@@ -140,11 +141,7 @@ class ApiManager {
         break;
       case BodyType.X_WWW_FORM_URL_ENCODED:
         contentType = 'application/x-www-form-urlencoded';
-        postBody = toStringMap(params ?? {});
-        break;
-      case BodyType.NONE:
-      case null:
-        break;
+        postBody = toStringMap(params);
     }
     if (contentType != null) {
       headers['Content-Type'] = contentType;
@@ -153,14 +150,14 @@ class ApiManager {
   }
 
   Future<ApiCallResponse> makeApiCall({
-    required String callName,
-    required String apiUrl,
-    required ApiCallType callType,
+    String callName,
+    String apiUrl,
+    ApiCallType callType,
     Map<String, dynamic> headers = const {},
     Map<String, dynamic> params = const {},
-    String? body,
-    BodyType? bodyType,
-    bool returnBody = true,
+    String body,
+    BodyType bodyType,
+    bool returnBody,
     bool cache = false,
   }) async {
     final callRecord =
@@ -176,7 +173,7 @@ class ApiManager {
     // If we've already made this exact call before and caching is on,
     // return the cached result.
     if (cache && _apiCache.containsKey(callRecord)) {
-      return _apiCache[callRecord]!;
+      return _apiCache[callRecord];
     }
 
     ApiCallResponse result;
@@ -195,7 +192,7 @@ class ApiManager {
     }
 
     // If caching is on, cache the result (if present).
-    if (cache) {
+    if (cache && result != null) {
       _apiCache[callRecord] = result;
     }
 

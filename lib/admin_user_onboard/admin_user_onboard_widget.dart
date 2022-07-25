@@ -12,7 +12,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AdminUserOnboardWidget extends StatefulWidget {
-  const AdminUserOnboardWidget({Key? key}) : super(key: key);
+  const AdminUserOnboardWidget({Key key}) : super(key: key);
 
   @override
   _AdminUserOnboardWidgetState createState() => _AdminUserOnboardWidgetState();
@@ -20,11 +20,11 @@ class AdminUserOnboardWidget extends StatefulWidget {
 
 class _AdminUserOnboardWidgetState extends State<AdminUserOnboardWidget> {
   String uploadedFileUrl = '';
-  TextEditingController? userNameController;
-  TextEditingController? emailAddressController;
-  TextEditingController? titleRoleController;
-  String? teamSelectValue;
-  TextEditingController? shortBioController;
+  TextEditingController userNameController;
+  TextEditingController emailAddressController;
+  TextEditingController titleRoleController;
+  String teamSelectValue;
+  TextEditingController shortBioController;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -105,7 +105,6 @@ class _AdminUserOnboardWidgetState extends State<AdminUserOnboardWidget> {
                                         await uploadData(
                                             m.storagePath, m.bytes))))
                                 .where((u) => u != null)
-                                .map((u) => u!)
                                 .toList();
                             ScaffoldMessenger.of(context).hideCurrentSnackBar();
                             if (downloadUrls != null &&

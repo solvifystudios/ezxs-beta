@@ -7,7 +7,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppbarWidget extends StatefulWidget {
-  const AppbarWidget({Key? key}) : super(key: key);
+  const AppbarWidget({Key key}) : super(key: key);
 
   @override
   _AppbarWidgetState createState() => _AppbarWidgetState();

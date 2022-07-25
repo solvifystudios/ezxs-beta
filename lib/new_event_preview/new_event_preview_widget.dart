@@ -7,7 +7,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class NewEventPreviewWidget extends StatefulWidget {
-  const NewEventPreviewWidget({Key? key}) : super(key: key);
+  const NewEventPreviewWidget({Key key}) : super(key: key);
 
   @override
   _NewEventPreviewWidgetState createState() => _NewEventPreviewWidgetState();

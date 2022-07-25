@@ -29,17 +29,17 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 
   static _MyAppState of(BuildContext context) =>
-      context.findAncestorStateOfType<_MyAppState>()!;
+      context.findAncestorStateOfType<_MyAppState>();
 }
 
 class _MyAppState extends State<MyApp> {
-  Locale? _locale;
+  Locale _locale;
   ThemeMode _themeMode = FlutterFlowTheme.themeMode;
 
-  late Stream<EZXSBetaFirebaseUser> userStream;
+  Stream<EZXSBetaFirebaseUser> userStream;
 
-  late AppStateNotifier _appStateNotifier;
-  late GoRouter _router;
+  AppStateNotifier _appStateNotifier;
+  GoRouter _router;
 
   final authUserSub = authenticatedUserStream.listen((_) {});
 
@@ -93,9 +93,9 @@ class _MyAppState extends State<MyApp> {
 }
 
 class NavBarPage extends StatefulWidget {
-  NavBarPage({Key? key, this.initialPage}) : super(key: key);
+  NavBarPage({Key key, this.initialPage}) : super(key: key);
 
-  final String? initialPage;
+  final String initialPage;
 
   @override
   _NavBarPageState createState() => _NavBarPageState();

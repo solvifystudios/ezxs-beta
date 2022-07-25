@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const kThemeModeKey = '__theme_mode__';
-SharedPreferences? _prefs;
+SharedPreferences _prefs;
 
 enum DeviceSize {
   mobile,
@@ -37,30 +37,30 @@ abstract class FlutterFlowTheme {
           ? DarkModeTheme()
           : LightModeTheme();
 
-  late Color primaryColor;
-  late Color secondaryColor;
-  late Color tertiaryColor;
-  late Color alternate;
-  late Color primaryBackground;
-  late Color secondaryBackground;
-  late Color primaryText;
-  late Color secondaryText;
+  Color primaryColor;
+  Color secondaryColor;
+  Color tertiaryColor;
+  Color alternate;
+  Color primaryBackground;
+  Color secondaryBackground;
+  Color primaryText;
+  Color secondaryText;
 
-  late Color primaryBtnText;
-  late Color lineColor;
-  late Color grayIcon;
-  late Color gray200;
-  late Color gray600;
-  late Color black600;
-  late Color tertiary400;
-  late Color textColor;
-  late Color maximumBlueGreen;
-  late Color plumpPurple;
-  late Color platinum;
-  late Color ashGray;
-  late Color darkSeaGreen;
-  late Color backgroundComponents;
-  late Color customColor1;
+  Color primaryBtnText;
+  Color lineColor;
+  Color grayIcon;
+  Color gray200;
+  Color gray600;
+  Color black600;
+  Color tertiary400;
+  Color textColor;
+  Color maximumBlueGreen;
+  Color plumpPurple;
+  Color platinum;
+  Color ashGray;
+  Color darkSeaGreen;
+  Color backgroundComponents;
+  Color customColor1;
 
   String get title1Family => typography.title1Family;
   TextStyle get title1 => typography.title1;
@@ -81,7 +81,7 @@ abstract class FlutterFlowTheme {
         DeviceSize.mobile: MobileTypography(this),
         DeviceSize.tablet: TabletTypography(this),
         DeviceSize.desktop: DesktopTypography(this),
-      }[deviceSize]!;
+      }[deviceSize];
 }
 
 DeviceSize getDeviceSize(BuildContext context) {
@@ -96,30 +96,30 @@ DeviceSize getDeviceSize(BuildContext context) {
 }
 
 class LightModeTheme extends FlutterFlowTheme {
-  late Color primaryColor = const Color(0xF4000000);
-  late Color secondaryColor = const Color(0xFFD1BB87);
-  late Color tertiaryColor = const Color(0xFF9ED6E4);
-  late Color alternate = const Color(0xFF033A7B);
-  late Color primaryBackground = const Color(0xFFD2DEEC);
-  late Color secondaryBackground = const Color(0xFFFFFFFF);
-  late Color primaryText = const Color(0xFF100007);
-  late Color secondaryText = const Color(0xFF000000);
+  Color primaryColor = const Color(0xF4000000);
+  Color secondaryColor = const Color(0xFFD1BB87);
+  Color tertiaryColor = const Color(0xFF9ED6E4);
+  Color alternate = const Color(0xFF033A7B);
+  Color primaryBackground = const Color(0xFFD2DEEC);
+  Color secondaryBackground = const Color(0xFFFFFFFF);
+  Color primaryText = const Color(0xFF100007);
+  Color secondaryText = const Color(0xFF000000);
 
-  late Color primaryBtnText = Color(0xFF000000);
-  late Color lineColor = Color(0xFFE0E3E7);
-  late Color grayIcon = Color(0xFF95A1AC);
-  late Color gray200 = Color(0xFFDBE2E7);
-  late Color gray600 = Color(0xFF262D34);
-  late Color black600 = Color(0xFF090F13);
-  late Color tertiary400 = Color(0xFF39D2C0);
-  late Color textColor = Color(0xFF1E2429);
-  late Color maximumBlueGreen = Color(0xFF0257C9);
-  late Color plumpPurple = Color(0xFF52489C);
-  late Color platinum = Color(0xFFEBEBEB);
-  late Color ashGray = Color(0xFFCAD2C5);
-  late Color darkSeaGreen = Color(0xFF84A98C);
-  late Color backgroundComponents = Color(0xFF1D2428);
-  late Color customColor1 = Color(0xFF2FB73C);
+  Color primaryBtnText = Color(0xFF000000);
+  Color lineColor = Color(0xFFE0E3E7);
+  Color grayIcon = Color(0xFF95A1AC);
+  Color gray200 = Color(0xFFDBE2E7);
+  Color gray600 = Color(0xFF262D34);
+  Color black600 = Color(0xFF090F13);
+  Color tertiary400 = Color(0xFF39D2C0);
+  Color textColor = Color(0xFF1E2429);
+  Color maximumBlueGreen = Color(0xFF0257C9);
+  Color plumpPurple = Color(0xFF52489C);
+  Color platinum = Color(0xFFEBEBEB);
+  Color ashGray = Color(0xFFCAD2C5);
+  Color darkSeaGreen = Color(0xFF84A98C);
+  Color backgroundComponents = Color(0xFF1D2428);
+  Color customColor1 = Color(0xFF2FB73C);
 }
 
 abstract class Typography {
@@ -308,47 +308,47 @@ class DesktopTypography extends Typography {
 }
 
 class DarkModeTheme extends FlutterFlowTheme {
-  late Color primaryColor = const Color(0xFF4B39EF);
-  late Color secondaryColor = const Color(0xFF39D2C0);
-  late Color tertiaryColor = const Color(0xFFEE8B60);
-  late Color alternate = const Color(0xFFFF5963);
-  late Color primaryBackground = const Color(0xFF1A1F24);
-  late Color secondaryBackground = const Color(0xFF101213);
-  late Color primaryText = const Color(0xFFFFFFFF);
-  late Color secondaryText = const Color(0xFF95A1AC);
+  Color primaryColor = const Color(0xFF4B39EF);
+  Color secondaryColor = const Color(0xFF39D2C0);
+  Color tertiaryColor = const Color(0xFFEE8B60);
+  Color alternate = const Color(0xFFFF5963);
+  Color primaryBackground = const Color(0xFF1A1F24);
+  Color secondaryBackground = const Color(0xFF101213);
+  Color primaryText = const Color(0xFFFFFFFF);
+  Color secondaryText = const Color(0xFF95A1AC);
 
-  late Color primaryBtnText = Color(0xFFFFFFFF);
-  late Color lineColor = Color(0xFF22282F);
-  late Color grayIcon = Color(0xFF95A1AC);
-  late Color gray200 = Color(0xFFDBE2E7);
-  late Color gray600 = Color(0xFF262D34);
-  late Color black600 = Color(0xFF090F13);
-  late Color tertiary400 = Color(0xFF39D2C0);
-  late Color textColor = Color(0xFF1E2429);
-  late Color maximumBlueGreen = Color(0xFF59C3C3);
-  late Color plumpPurple = Color(0xFF52489C);
-  late Color platinum = Color(0xFFEBEBEB);
-  late Color ashGray = Color(0xFFCAD2C5);
-  late Color darkSeaGreen = Color(0xFF84A98C);
-  late Color backgroundComponents = Color(0xFF1D2428);
-  late Color customColor1 = Color(0xFF452FB7);
+  Color primaryBtnText = Color(0xFFFFFFFF);
+  Color lineColor = Color(0xFF22282F);
+  Color grayIcon = Color(0xFF95A1AC);
+  Color gray200 = Color(0xFFDBE2E7);
+  Color gray600 = Color(0xFF262D34);
+  Color black600 = Color(0xFF090F13);
+  Color tertiary400 = Color(0xFF39D2C0);
+  Color textColor = Color(0xFF1E2429);
+  Color maximumBlueGreen = Color(0xFF59C3C3);
+  Color plumpPurple = Color(0xFF52489C);
+  Color platinum = Color(0xFFEBEBEB);
+  Color ashGray = Color(0xFFCAD2C5);
+  Color darkSeaGreen = Color(0xFF84A98C);
+  Color backgroundComponents = Color(0xFF1D2428);
+  Color customColor1 = Color(0xFF452FB7);
 }
 
 extension TextStyleHelper on TextStyle {
   TextStyle override({
-    String? fontFamily,
-    Color? color,
-    double? fontSize,
-    FontWeight? fontWeight,
-    double? letterSpacing,
-    FontStyle? fontStyle,
+    String fontFamily,
+    Color color,
+    double fontSize,
+    FontWeight fontWeight,
+    double letterSpacing,
+    FontStyle fontStyle,
     bool useGoogleFonts = true,
-    TextDecoration? decoration,
-    double? lineHeight,
+    TextDecoration decoration,
+    double lineHeight,
   }) =>
       useGoogleFonts
           ? GoogleFonts.getFont(
-              fontFamily!,
+              fontFamily,
               color: color ?? this.color,
               fontSize: fontSize ?? this.fontSize,
               letterSpacing: letterSpacing ?? this.letterSpacing,

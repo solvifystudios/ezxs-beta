@@ -6,7 +6,7 @@ export 'api_manager.dart' show ApiCallResponse;
 
 class IssueTicketCall {
   static Future<ApiCallResponse> call({
-    String? jwt = '',
+    String jwt = '',
   }) {
     final body = '''
 {
@@ -70,9 +70,9 @@ class EventTicketsticketredeemCall {
 
 class CreateVenueCall {
   static Future<ApiCallResponse> call({
-    String? jwt = '',
-    String? pkApiSecret = '',
-    String? pkApiKey = '',
+    String jwt = '',
+    String pkApiSecret = '',
+    String pkApiKey = '',
   }) {
     final body = '''
 

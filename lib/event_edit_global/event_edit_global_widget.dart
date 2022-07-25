@@ -9,18 +9,18 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class EventEditGlobalWidget extends StatefulWidget {
-  const EventEditGlobalWidget({Key? key}) : super(key: key);
+  const EventEditGlobalWidget({Key key}) : super(key: key);
 
   @override
   _EventEditGlobalWidgetState createState() => _EventEditGlobalWidgetState();
 }
 
 class _EventEditGlobalWidgetState extends State<EventEditGlobalWidget> {
-  String? teamSelectValue;
-  TextEditingController? shortBioController;
-  TextEditingController? userNameController;
-  String? userSelectValue1;
-  String? userSelectValue2;
+  String teamSelectValue;
+  TextEditingController shortBioController;
+  TextEditingController userNameController;
+  String userSelectValue1;
+  String userSelectValue2;
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 

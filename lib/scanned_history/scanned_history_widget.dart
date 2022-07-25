@@ -7,7 +7,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ScannedHistoryWidget extends StatefulWidget {
-  const ScannedHistoryWidget({Key? key}) : super(key: key);
+  const ScannedHistoryWidget({Key key}) : super(key: key);
 
   @override
   _ScannedHistoryWidgetState createState() => _ScannedHistoryWidgetState();

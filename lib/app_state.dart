@@ -17,7 +17,7 @@ class FFAppState {
     _Authorization = prefs.getString('ff_Authorization') ?? _Authorization;
   }
 
-  late SharedPreferences prefs;
+  SharedPreferences prefs;
 
   String _Authorization = '[[jwt]]';
   String get Authorization => _Authorization;
@@ -27,7 +27,7 @@ class FFAppState {
   }
 }
 
-LatLng? _latLngFromString(String? val) {
+LatLng _latLngFromString(String val) {
   if (val == null) {
     return null;
   }

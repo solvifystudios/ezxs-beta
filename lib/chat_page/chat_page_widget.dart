@@ -11,20 +11,20 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ChatPageWidget extends StatefulWidget {
   const ChatPageWidget({
-    Key? key,
+    Key key,
     this.chatUser,
     this.chatRef,
   }) : super(key: key);
 
-  final UsersRecord? chatUser;
-  final DocumentReference? chatRef;
+  final UsersRecord chatUser;
+  final DocumentReference chatRef;
 
   @override
   _ChatPageWidgetState createState() => _ChatPageWidgetState();
 }
 
 class _ChatPageWidgetState extends State<ChatPageWidget> {
-  FFChatInfo? _chatInfo;
+  FFChatInfo _chatInfo;
   bool isGroupChat() {
     if (widget.chatUser == null) {
       return true;
@@ -78,7 +78,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
             if ((currentUserDisplayName) == '')
               AuthUserStreamWidget(
                 child: Text(
-                  widget.chatUser!.displayName!,
+                  widget.chatUser.displayName,
                   style: FlutterFlowTheme.of(context).bodyText1.override(
                         fontFamily: 'Lexend Deca',
                         color: Colors.black,
@@ -110,7 +110,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
           ),
           builder: (context, snapshot) => snapshot.hasData
               ? FFChatPage(
-                  chatInfo: snapshot.data!,
+                  chatInfo: snapshot.data,
                   allowImages: true,
                   backgroundColor: Color(0xFFD1BB87),
                   timeDisplaySetting: TimeDisplaySetting.visibleOnTap,

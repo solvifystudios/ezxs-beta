@@ -11,7 +11,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class EventEdit2Widget extends StatefulWidget {
-  const EventEdit2Widget({Key? key}) : super(key: key);
+  const EventEdit2Widget({Key key}) : super(key: key);
 
   @override
   _EventEdit2WidgetState createState() => _EventEdit2WidgetState();
@@ -19,8 +19,8 @@ class EventEdit2Widget extends StatefulWidget {
 
 class _EventEdit2WidgetState extends State<EventEdit2Widget>
     with TickerProviderStateMixin {
-  String? dropDownValue;
-  int? countControllerValue;
+  String dropDownValue;
+  int countControllerValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final animationsMap = {
     'rowOnPageLoadAnimation1': AnimationInfo(
@@ -199,7 +199,7 @@ class _EventEdit2WidgetState extends State<EventEdit2Widget>
                           style: FlutterFlowTheme.of(context).title3,
                         ),
                       ],
-                    ).animated([animationsMap['rowOnPageLoadAnimation1']!]),
+                    ).animated([animationsMap['rowOnPageLoadAnimation1']]),
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 8),
@@ -214,7 +214,7 @@ class _EventEdit2WidgetState extends State<EventEdit2Widget>
                               'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.',
                               style: FlutterFlowTheme.of(context).bodyText2,
                             ).animated(
-                                [animationsMap['textOnPageLoadAnimation']!]),
+                                [animationsMap['textOnPageLoadAnimation']]),
                           ),
                         ),
                       ],
@@ -273,7 +273,7 @@ class _EventEdit2WidgetState extends State<EventEdit2Widget>
                           ),
                         ),
                       ],
-                    ).animated([animationsMap['rowOnPageLoadAnimation2']!]),
+                    ).animated([animationsMap['rowOnPageLoadAnimation2']]),
                   ),
                 ],
               ),
@@ -359,7 +359,7 @@ class _EventEdit2WidgetState extends State<EventEdit2Widget>
                 ),
               ),
             ),
-          ).animated([animationsMap['containerOnPageLoadAnimation']!]),
+          ).animated([animationsMap['containerOnPageLoadAnimation']]),
         ],
       ),
     );

@@ -7,7 +7,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PassGeneratorWidget extends StatefulWidget {
-  const PassGeneratorWidget({Key? key}) : super(key: key);
+  const PassGeneratorWidget({Key key}) : super(key: key);
 
   @override
   _PassGeneratorWidgetState createState() => _PassGeneratorWidgetState();

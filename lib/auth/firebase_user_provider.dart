@@ -3,11 +3,11 @@ import 'package:rxdart/rxdart.dart';
 
 class EZXSBetaFirebaseUser {
   EZXSBetaFirebaseUser(this.user);
-  User? user;
+  User user;
   bool get loggedIn => user != null;
 }
 
-EZXSBetaFirebaseUser? currentUser;
+EZXSBetaFirebaseUser currentUser;
 bool get loggedIn => currentUser?.loggedIn ?? false;
 Stream<EZXSBetaFirebaseUser> eZXSBetaFirebaseUserStream() =>
     FirebaseAuth.instance

@@ -6,7 +6,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProductionWidget extends StatefulWidget {
-  const ProductionWidget({Key? key}) : super(key: key);
+  const ProductionWidget({Key key}) : super(key: key);
 
   @override
   _ProductionWidgetState createState() => _ProductionWidgetState();

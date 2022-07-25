@@ -9,7 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class MembershipType2Widget extends StatefulWidget {
-  const MembershipType2Widget({Key? key}) : super(key: key);
+  const MembershipType2Widget({Key key}) : super(key: key);
 
   @override
   _MembershipType2WidgetState createState() => _MembershipType2WidgetState();
@@ -274,7 +274,7 @@ class _MembershipType2WidgetState extends State<MembershipType2Widget>
                                           color: Colors.white,
                                         ),
                                   ).animated([
-                                    animationsMap['textOnPageLoadAnimation1']!
+                                    animationsMap['textOnPageLoadAnimation1']
                                   ]),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
@@ -291,7 +291,7 @@ class _MembershipType2WidgetState extends State<MembershipType2Widget>
                                             fontStyle: FontStyle.italic,
                                           ),
                                     ).animated([
-                                      animationsMap['textOnPageLoadAnimation2']!
+                                      animationsMap['textOnPageLoadAnimation2']
                                     ]),
                                   ),
                                   Padding(
@@ -309,7 +309,7 @@ class _MembershipType2WidgetState extends State<MembershipType2Widget>
                                                 .secondaryColor,
                                           ),
                                     ).animated([
-                                      animationsMap['textOnPageLoadAnimation3']!
+                                      animationsMap['textOnPageLoadAnimation3']
                                     ]),
                                   ),
                                 ],
@@ -579,7 +579,7 @@ class _MembershipType2WidgetState extends State<MembershipType2Widget>
                             ],
                           ),
                         ).animated(
-                            [animationsMap['containerOnPageLoadAnimation1']!]),
+                            [animationsMap['containerOnPageLoadAnimation1']]),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 12),
@@ -701,7 +701,7 @@ class _MembershipType2WidgetState extends State<MembershipType2Widget>
                             ],
                           ),
                         ).animated(
-                            [animationsMap['containerOnPageLoadAnimation2']!]),
+                            [animationsMap['containerOnPageLoadAnimation2']]),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 12),
@@ -829,7 +829,7 @@ class _MembershipType2WidgetState extends State<MembershipType2Widget>
                             ),
                           ),
                         ).animated(
-                            [animationsMap['containerOnPageLoadAnimation3']!]),
+                            [animationsMap['containerOnPageLoadAnimation3']]),
                       ),
                     ],
                   ),

@@ -8,14 +8,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class ClientFeedbackWidget extends StatefulWidget {
-  const ClientFeedbackWidget({Key? key}) : super(key: key);
+  const ClientFeedbackWidget({Key key}) : super(key: key);
 
   @override
   _ClientFeedbackWidgetState createState() => _ClientFeedbackWidgetState();
 }
 
 class _ClientFeedbackWidgetState extends State<ClientFeedbackWidget> {
-  double? sliderValue;
+  double sliderValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

@@ -12,7 +12,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProfileSettingWidget extends StatefulWidget {
-  const ProfileSettingWidget({Key? key}) : super(key: key);
+  const ProfileSettingWidget({Key key}) : super(key: key);
 
   @override
   _ProfileSettingWidgetState createState() => _ProfileSettingWidgetState();
@@ -20,9 +20,9 @@ class ProfileSettingWidget extends StatefulWidget {
 
 class _ProfileSettingWidgetState extends State<ProfileSettingWidget> {
   String uploadedFileUrl = '';
-  TextEditingController? textController1;
-  TextEditingController? textController2;
-  bool? switchListTileValue;
+  TextEditingController textController1;
+  TextEditingController textController2;
+  bool switchListTileValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -143,7 +143,6 @@ class _ProfileSettingWidgetState extends State<ProfileSettingWidget> {
                                                               m.storagePath,
                                                               m.bytes))))
                                                   .where((u) => u != null)
-                                                  .map((u) => u!)
                                                   .toList();
                                           ScaffoldMessenger.of(context)
                                               .hideCurrentSnackBar();
@@ -224,7 +223,7 @@ class _ProfileSettingWidgetState extends State<ProfileSettingWidget> {
                         child: FFButtonWidget(
                           onPressed: () async {
                             final usersUpdateData = createUsersRecordData();
-                            await currentUserReference!.update(usersUpdateData);
+                            await currentUserReference.update(usersUpdateData);
                           },
                           text: 'Edit Photo',
                           options: FFButtonOptions(
@@ -339,7 +338,7 @@ class _ProfileSettingWidgetState extends State<ProfileSettingWidget> {
                               email: '',
                               displayName: '',
                             );
-                            await currentUserReference!.update(usersUpdateData);
+                            await currentUserReference.update(usersUpdateData);
                           },
                           text: 'Save Changes',
                           options: FFButtonOptions(

@@ -31,8 +31,6 @@ export 'user_scan_info/user_scan_info_widget.dart' show UserScanInfoWidget;
 export 'venues/venues_widget.dart' show VenuesWidget;
 export 'client_feedback/client_feedback_widget.dart' show ClientFeedbackWidget;
 export 'membership_type/membership_type_widget.dart' show MembershipTypeWidget;
-export 'event_edit_confirm/event_edit_confirm_widget.dart'
-    show EventEditConfirmWidget;
 export 'admin_user_onboard/admin_user_onboard_widget.dart'
     show AdminUserOnboardWidget;
 export 'event_edit_global/event_edit_global_widget.dart'

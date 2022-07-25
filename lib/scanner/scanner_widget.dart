@@ -8,7 +8,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ScannerWidget extends StatefulWidget {
-  const ScannerWidget({Key? key}) : super(key: key);
+  const ScannerWidget({Key key}) : super(key: key);
 
   @override
   _ScannerWidgetState createState() => _ScannerWidgetState();
@@ -75,7 +75,7 @@ class _ScannerWidgetState extends State<ScannerWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
                 child: Text(
-                  scan!,
+                  scan,
                   style: FlutterFlowTheme.of(context).title3,
                 ),
               ),

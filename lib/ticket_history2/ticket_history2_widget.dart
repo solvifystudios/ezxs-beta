@@ -7,7 +7,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TicketHistory2Widget extends StatefulWidget {
-  const TicketHistory2Widget({Key? key}) : super(key: key);
+  const TicketHistory2Widget({Key key}) : super(key: key);
 
   @override
   _TicketHistory2WidgetState createState() => _TicketHistory2WidgetState();

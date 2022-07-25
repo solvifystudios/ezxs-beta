@@ -7,7 +7,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class EditUserTicketWidget extends StatefulWidget {
-  const EditUserTicketWidget({Key? key}) : super(key: key);
+  const EditUserTicketWidget({Key key}) : super(key: key);
 
   @override
   _EditUserTicketWidgetState createState() => _EditUserTicketWidgetState();

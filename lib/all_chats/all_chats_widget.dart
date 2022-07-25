@@ -8,7 +8,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AllChatsWidget extends StatefulWidget {
-  const AllChatsWidget({Key? key}) : super(key: key);
+  const AllChatsWidget({Key key}) : super(key: key);
 
   @override
   _AllChatsWidgetState createState() => _AllChatsWidgetState();
@@ -60,7 +60,7 @@ class _AllChatsWidgetState extends State<AllChatsWidget> {
                   ),
                 );
               }
-              List<ChatsRecord> listViewChatsRecordList = snapshot.data!;
+              List<ChatsRecord> listViewChatsRecordList = snapshot.data;
               return ListView.builder(
                 padding: EdgeInsets.zero,
                 scrollDirection: Axis.vertical,
@@ -95,7 +95,7 @@ class _AllChatsWidgetState extends State<AllChatsWidget> {
                         ),
                         lastChatText: chatInfo.chatPreviewMessage(),
                         lastChatTime: listViewChatsRecord.lastMessageTime,
-                        seen: listViewChatsRecord.lastMessageSeenBy!
+                        seen: listViewChatsRecord.lastMessageSeenBy
                             .contains(currentUserReference),
                         title: chatInfo.chatPreviewTitle(),
                         userProfilePic: chatInfo.chatPreviewPic(),

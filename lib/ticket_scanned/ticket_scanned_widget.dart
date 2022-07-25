@@ -8,11 +8,11 @@ import 'package:lottie/lottie.dart';
 
 class TicketScannedWidget extends StatefulWidget {
   const TicketScannedWidget({
-    Key? key,
+    Key key,
     this.redeemTicket,
   }) : super(key: key);
 
-  final String? redeemTicket;
+  final String redeemTicket;
 
   @override
   _TicketScannedWidgetState createState() => _TicketScannedWidgetState();
@@ -62,7 +62,7 @@ class _TicketScannedWidgetState extends State<TicketScannedWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                 child: Text(
-                  widget.redeemTicket!,
+                  widget.redeemTicket,
                   style: FlutterFlowTheme.of(context).subtitle2.override(
                         fontFamily:
                             FlutterFlowTheme.of(context).subtitle2Family,
